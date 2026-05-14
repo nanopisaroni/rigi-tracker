@@ -696,8 +696,10 @@
   });
 
   // ===== Stock ticker fetch + render =====
-  // Hits our own /api/stock Vercel function (which proxies Yahoo Finance with
-  // proper headers + server-side caching). Avoids browser CORS issues entirely.
+  // Hits our own /api/stock Vercel function. It tries Yahoo Finance first
+  // (for sparkline + meta) and falls back to Stooq (for current quote without
+  // sparkline) when Yahoo is rate-limiting. The `sparkline` flag tells us
+  // whether the response has historical points or only a current snapshot.
   async function fetchStock(ticker, range) {
     try {
       const r = await fetch(`/api/stock?symbol=${encodeURIComponent(ticker)}&range=${encodeURIComponent(range)}`, { mode: 'cors' });
@@ -706,8 +708,12 @@
       const ts = json.timestamp || [];
       const closes = json.close || [];
       const points = ts.map((t, i) => ({ t: t * 1000, c: closes[i] })).filter(p => p.c != null);
-      if (!points.length) return null;
-      return { meta: json.meta || {}, points };
+      return {
+        meta: json.meta || {},
+        points,
+        source: json.source || 'unknown',
+        sparkline: !!json.sparkline && points.length > 0
+      };
     } catch (e) {
       return null;
     }
@@ -718,11 +724,50 @@
     const body = wrap.querySelector('.ticker-body');
     body.innerHTML = '<div class="ticker-skel"></div>';
     const data = await fetchStock(ticker, range);
-    if (!data || !data.points.length) {
+    if (!data) {
       body.innerHTML = `<div class="ticker-status error">No se pudieron cargar los datos en vivo. <a href="https://finance.yahoo.com/quote/${encodeURIComponent(ticker)}" target="_blank" rel="noopener" style="color:var(--blue)">Ver en Yahoo Finance →</a></div>`;
       return;
     }
-    renderTickerChart(body, data, range, wrap.dataset.ticker);
+    if (!data.sparkline) {
+      renderTickerSnapshot(body, data, range, ticker);
+      return;
+    }
+    renderTickerChart(body, data, range, ticker);
+  }
+
+  function renderTickerSnapshot(body, data, range, ticker) {
+    const m = data.meta || {};
+    const currency = m.currency || 'USD';
+    const symPrefix = currency === 'USD' ? 'US$' : (currency + ' ');
+    const price = m.regularMarketPrice;
+    const open = m.regularMarketOpen;
+    const high = m.regularMarketDayHigh;
+    const low = m.regularMarketDayLow;
+    const vol = m.regularMarketVolume;
+    const change = (price != null && open != null) ? price - open : null;
+    const pct = (change != null && open) ? (change / open) * 100 : null;
+    const dir = change == null ? 'flat' : change > 0.001 ? 'up' : change < -0.001 ? 'down' : 'flat';
+    const changeStr = change == null ? '' :
+      (change >= 0 ? '+' : '') + symPrefix + Math.abs(change).toFixed(2) +
+      (pct != null ? ' · ' + (pct >= 0 ? '+' : '') + pct.toFixed(2) + '%' : '');
+
+    body.innerHTML = `
+      <div class="ticker-price-block">
+        <span class="ticker-price">${price != null ? symPrefix + price.toFixed(2) : '—'}</span>
+        ${changeStr ? `<span class="ticker-change ${dir}">${changeStr}</span>` : ''}
+        <span style="color:var(--text-3); font-size:11px">cambio del día</span>
+      </div>
+      <div class="ticker-status" style="margin-top:8px; background:var(--surface); padding:10px 12px; border-radius:6px; border:1px solid var(--border)">
+        Histórico de ${range === '1d' ? '1 día' : range === '5d' ? '7 días' : range === '1mo' ? '30 días' : '3 meses'} no disponible en este momento. Mostrando cotización actual desde Stooq.
+        <a href="https://finance.yahoo.com/quote/${encodeURIComponent(ticker)}/chart" target="_blank" rel="noopener" style="color:var(--blue); margin-left:6px">Ver gráfico en Yahoo Finance ↗</a>
+      </div>
+      <div class="ticker-meta">
+        ${open != null ? `<span>Apertura <strong>${symPrefix}${open.toFixed(2)}</strong></span>` : ''}
+        ${high != null ? `<span>Máx día <strong>${symPrefix}${high.toFixed(2)}</strong></span>` : ''}
+        ${low != null ? `<span>Mín día <strong>${symPrefix}${low.toFixed(2)}</strong></span>` : ''}
+        ${vol != null ? `<span>Vol <strong>${(vol / 1e6).toFixed(2)}M</strong></span>` : ''}
+      </div>
+    `;
   }
 
   function renderTickerChart(body, data, range, ticker) {
@@ -737,7 +782,8 @@
     const pct = (change / first) * 100;
     const dir = change > 0.0001 ? 'up' : change < -0.0001 ? 'down' : 'flat';
     const currency = data.meta?.currency || 'USD';
-    const symPrefix = currency === 'USD' ? 'US$' : (currency + ' ');
+    const CURRENCY_SYMBOLS = { USD: 'US$', AUD: 'A$', CAD: 'C$', GBP: '£', EUR: '€', HKD: 'HK$' };
+    const symPrefix = CURRENCY_SYMBOLS[currency] || (currency + ' ');
 
     const W = 800, H = 100;
     const minP = Math.min(...pts.map(p => p.c));
