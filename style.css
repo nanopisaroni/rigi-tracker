@@ -268,7 +268,7 @@ button { font-family: inherit; cursor: pointer; }
 .atl-chart svg {
   display: block;
   width: 100%;
-  height: 220px;
+  height: auto;
 }
 .atl text.atl-axis {
   fill: var(--text-3);
@@ -1160,14 +1160,10 @@ button { font-family: inherit; cursor: pointer; }
   .timeline li { grid-template-columns: 72px 1fr; gap: 12px; }
 }
 
-@media (max-width: 980px) {
-  .atl-chart svg { height: 200px; }
-}
 @media (max-width: 768px) {
   .container { padding: 0 16px; }
   .atl { margin-top: 24px; }
   .atl-chart { padding: 12px 8px 4px; }
-  .atl-chart svg { height: 200px; }
   .atl-legend { gap: 8px; font-size: 10.5px; }
   .ticker-head { flex-direction: column; align-items: stretch; gap: 10px; }
   .ticker-price-block { justify-content: space-between; }

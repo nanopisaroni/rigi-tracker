@@ -521,13 +521,24 @@
   }));
 
   // ===== Hero approval timeline =====
+  // Renders in pixel space (viewBox === rendered size) so circles never get
+  // distorted on narrow viewports. Re-renders on resize (debounced).
   function renderApprovalTimeline() {
     const svg = document.getElementById('atlSvg');
+    const wrap = document.getElementById('atlChart');
     const tip = document.getElementById('atlTip');
-    if (!svg) return;
+    if (!svg || !wrap) return;
 
-    const W = 1200, H = 220;
-    const padL = 96, padR = 24, padT = 18, padB = 32;
+    // Compute pixel viewport. Width matches wrap inner width; height responds.
+    const wrapRect = wrap.getBoundingClientRect();
+    const W = Math.max(320, Math.round(wrapRect.width || 1100));
+    const mobile = W < 640;
+    const H = mobile ? 240 : 220;
+
+    const padL = mobile ? 78 : 96;
+    const padR = mobile ? 12 : 24;
+    const padT = 18;
+    const padB = mobile ? 36 : 32;
     const plotW = W - padL - padR;
     const plotH = H - padT - padB;
 
@@ -539,7 +550,6 @@
       return padL + ((d - startDate) / dateRange) * plotW;
     };
 
-    // 4 sector lanes — top 65% of plot
     const laneOrder = ['oilgas', 'mining', 'energy', 'infrastructure'];
     const laneZoneH = plotH * 0.62;
     const laneZoneTop = padT;
@@ -547,19 +557,19 @@
     const laneY = (sector) => laneZoneTop + laneOrder.indexOf(sector) * laneStep + laneStep / 2;
 
     const maxAmount = Math.max(...data.projects.map(p => p.amount));
-    const rOf = (amount) => 4 + Math.sqrt(amount / maxAmount) * 11;
+    const rMin = mobile ? 3 : 4;
+    const rMax = mobile ? 9 : 12;
+    const rOf = (amount) => rMin + Math.sqrt(amount / maxAmount) * (rMax - rMin);
 
-    // Cumulative area — bottom 35% strip
-    const cumTop = padT + plotH * 0.68;
+    const cumTop = padT + plotH * 0.70;
     const cumBottom = padT + plotH;
     const cumH = cumBottom - cumTop;
     const sorted = [...data.projects].sort((a, b) => a.approvalDate.localeCompare(b.approvalDate));
     const totalAmount = sorted.reduce((acc, p) => acc + p.amount, 0);
 
     let cum = 0;
-    const linePts = [];
-    linePts.push([padL, cumBottom]);
-    sorted.forEach((p, i) => {
+    const linePts = [[padL, cumBottom]];
+    sorted.forEach(p => {
       const x = xOf(p.approvalDate);
       linePts.push([x, cumBottom - (cum / totalAmount) * cumH]);
       cum += p.amount;
@@ -577,47 +587,51 @@
       months.push(new Date(cursor));
       cursor.setUTCMonth(cursor.getUTCMonth() + 1);
     }
-    const monthLabels = months.map(m => {
+    // Decide label spacing based on available width so we don't overlap on mobile.
+    const minLabelPx = 56;
+    const labelStrideMonths = Math.max(1, Math.ceil(months.length * minLabelPx / plotW));
+    const monthLabels = months.map((m, i) => {
       const mi = m.getUTCMonth();
       const yi = m.getUTCFullYear();
-      const showLabel = mi % 2 === 0;
-      return {
-        x: xOf(m.toISOString().slice(0, 10)),
-        label: showLabel ? `${MONTHS[mi]}${mi === 0 ? "'" + String(yi).slice(2) : ''}` : null
-      };
+      const x = xOf(m.toISOString().slice(0, 10));
+      const showLabel = i % labelStrideMonths === 0;
+      const label = showLabel
+        ? `${MONTHS[mi]}${mi === 0 || i === 0 ? "'" + String(yi).slice(2) : ''}`
+        : null;
+      return { x, label };
     });
 
-    const gridLines = months.map(m => {
-      const x = xOf(m.toISOString().slice(0, 10));
-      return `<line class="atl-grid" x1="${x.toFixed(1)}" y1="${padT}" x2="${x.toFixed(1)}" y2="${padT + plotH}"/>`;
-    }).join('');
+    const gridLines = monthLabels.filter(m => m.label).map(m =>
+      `<line class="atl-grid" x1="${m.x.toFixed(1)}" y1="${padT}" x2="${m.x.toFixed(1)}" y2="${(padT + plotH).toFixed(1)}"/>`
+    ).join('');
     const xAxis = monthLabels.filter(m => m.label).map(m =>
-      `<text class="atl-axis" x="${m.x.toFixed(1)}" y="${H - 12}" text-anchor="middle">${m.label}</text>`
+      `<text class="atl-axis" x="${m.x.toFixed(1)}" y="${(H - 12).toFixed(1)}" text-anchor="middle">${m.label}</text>`
     ).join('');
 
-    // Lane labels
     const laneLabels = laneOrder.map((s, i) => {
       const y = laneZoneTop + i * laneStep + laneStep / 2 + 3;
-      return `<text class="atl-lane-label" x="${padL - 8}" y="${y.toFixed(1)}">${data.sectors[s].label}</text>`;
+      const text = mobile && data.sectors[s].label === 'Infraestructura' ? 'Infra' : data.sectors[s].label;
+      return `<text class="atl-lane-label" x="${(padL - 8).toFixed(1)}" y="${y.toFixed(1)}">${text}</text>`;
     }).join('');
 
-    // Lane separators (very subtle)
     const laneSep = laneOrder.slice(1).map((_, i) => {
       const y = laneZoneTop + (i + 1) * laneStep;
-      return `<line class="atl-grid" x1="${padL}" y1="${y.toFixed(1)}" x2="${padL + plotW}" y2="${y.toFixed(1)}"/>`;
+      return `<line class="atl-grid" x1="${padL}" y1="${y.toFixed(1)}" x2="${(padL + plotW).toFixed(1)}" y2="${y.toFixed(1)}"/>`;
     }).join('');
 
-    // Same-sector-same-date bubble jitter to avoid full overlap
+    // Same-sector-same-date bubble jitter (offsetting along the lane horizontally)
     const seen = {};
     const bubbles = data.projects.map(p => {
       const key = p.sector + p.approvalDate;
       const idx = seen[key] || 0;
       seen[key] = idx + 1;
-      const x = xOf(p.approvalDate);
+      let x = xOf(p.approvalDate);
       const r = rOf(p.amount);
-      // jitter vertically inside lane if duplicate
-      const jitter = idx === 0 ? 0 : (idx % 2 === 1 ? -1 : 1) * Math.min(r + 2, laneStep / 2 - 2) * Math.ceil(idx / 2);
-      const y = laneY(p.sector) + jitter;
+      if (idx > 0) {
+        const dir = idx % 2 === 1 ? 1 : -1;
+        x += dir * (r * 0.9) * Math.ceil(idx / 2);
+      }
+      const y = laneY(p.sector);
       return `<circle class="atl-bubble" cx="${x.toFixed(1)}" cy="${y.toFixed(1)}" r="${r.toFixed(1)}"
         fill="${data.sectors[p.sector].color}"
         data-id="${p.id}"
@@ -627,31 +641,31 @@
         data-sector="${data.sectors[p.sector].label}"/>`;
     }).join('');
 
-    // Cumulative value labels (left & right)
     const totalLabel = 'US$' + (totalAmount / 1000).toFixed(2).replace(/\.?0+$/, '') + ' MM';
 
+    svg.setAttribute('viewBox', `0 0 ${W} ${H}`);
+    svg.setAttribute('width', String(W));
+    svg.setAttribute('height', String(H));
     svg.innerHTML = `
       ${gridLines}
       ${laneSep}
       ${laneLabels}
       <path class="atl-cum" d="${cumPath}"/>
       <path class="atl-cum" d="${cumLinePath}" fill="none"/>
-      <text class="atl-axis" x="${padL - 8}" y="${(cumBottom + 4).toFixed(1)}" text-anchor="end">US$0</text>
-      <text class="atl-axis" x="${padL - 8}" y="${(cumTop + 4).toFixed(1)}" text-anchor="end">${totalLabel}</text>
+      <text class="atl-axis" x="${(padL - 8).toFixed(1)}" y="${(cumBottom + 4).toFixed(1)}" text-anchor="end">US$0</text>
+      <text class="atl-axis" x="${(padL - 8).toFixed(1)}" y="${(cumTop + 4).toFixed(1)}" text-anchor="end">${totalLabel}</text>
       ${bubbles}
       ${xAxis}
     `;
 
-    // Render legend
     const legend = document.getElementById('atlLegend');
     if (legend) {
       legend.innerHTML = laneOrder.map(s =>
         `<span><span class="ldot" style="background:${data.sectors[s].color}"></span>${data.sectors[s].label}</span>`
-      ).join('') + `<span style="color:var(--text-3)"><span class="ldot" style="background:${getComputedStyle(document.documentElement).getPropertyValue('--blue').trim() || '#2563eb'}; opacity:.5"></span>acumulado</span>`;
+      ).join('') + `<span style="color:var(--text-3)"><span class="ldot" style="background:${getComputedStyle(document.documentElement).getPropertyValue('--blue').trim() || '#2563eb'}; opacity:.45"></span>acumulado</span>`;
     }
 
-    // Bubble hover tooltip
-    const wrap = svg.parentElement;
+    // Bubble hover/click interactions
     svg.querySelectorAll('.atl-bubble').forEach(c => {
       c.addEventListener('mousemove', (e) => {
         const rect = wrap.getBoundingClientRect();
@@ -675,35 +689,28 @@
     });
   }
 
-  // ===== Stock ticker fetch + render =====
-  // Yahoo Finance v8 chart endpoint is gated by CORS, so we route through public
-  // proxies. If all fail, fall back to a graceful error in the UI.
-  const STOCK_PROXIES = [
-    (u) => `https://corsproxy.io/?${encodeURIComponent(u)}`,
-    (u) => `https://api.allorigins.win/raw?url=${encodeURIComponent(u)}`
-  ];
+  let atlResizeT;
+  window.addEventListener('resize', () => {
+    clearTimeout(atlResizeT);
+    atlResizeT = setTimeout(renderApprovalTimeline, 120);
+  });
 
+  // ===== Stock ticker fetch + render =====
+  // Hits our own /api/stock Vercel function (which proxies Yahoo Finance with
+  // proper headers + server-side caching). Avoids browser CORS issues entirely.
   async function fetchStock(ticker, range) {
-    const intervalByRange = { '1d': '5m', '5d': '15m', '1mo': '1d', '3mo': '1d' };
-    const interval = intervalByRange[range] || '1d';
-    const yahooUrl = `https://query1.finance.yahoo.com/v8/finance/chart/${encodeURIComponent(ticker)}?range=${range}&interval=${interval}&includePrePost=false`;
-    for (const buildUrl of STOCK_PROXIES) {
-      try {
-        const r = await fetch(buildUrl(yahooUrl), { mode: 'cors' });
-        if (!r.ok) continue;
-        const json = await r.json();
-        const result = json?.chart?.result?.[0];
-        if (!result) continue;
-        const ts = result.timestamp || [];
-        const closes = result.indicators?.quote?.[0]?.close || [];
-        const points = ts.map((t, i) => ({ t: t * 1000, c: closes[i] })).filter(p => p.c != null);
-        if (!points.length) continue;
-        return { meta: result.meta, points };
-      } catch (e) {
-        // try next proxy
-      }
+    try {
+      const r = await fetch(`/api/stock?symbol=${encodeURIComponent(ticker)}&range=${encodeURIComponent(range)}`, { mode: 'cors' });
+      if (!r.ok) return null;
+      const json = await r.json();
+      const ts = json.timestamp || [];
+      const closes = json.close || [];
+      const points = ts.map((t, i) => ({ t: t * 1000, c: closes[i] })).filter(p => p.c != null);
+      if (!points.length) return null;
+      return { meta: json.meta || {}, points };
+    } catch (e) {
+      return null;
     }
-    return null;
   }
 
   async function loadTicker(wrap, range) {

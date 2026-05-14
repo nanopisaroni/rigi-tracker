@@ -1,6 +1,12 @@
 {
-  "name": "rigi-tracker",
-  "version": 2,
-  "builds": [{ "src": "**/*", "use": "@vercel/static" }],
-  "routes": [{ "src": "/(.*)", "dest": "/$1" }]
+  "$schema": "https://openapi.vercel.sh/vercel.json",
+  "cleanUrls": true,
+  "headers": [
+    {
+      "source": "/api/stock",
+      "headers": [
+        { "key": "Cache-Control", "value": "public, s-maxage=300, max-age=60, stale-while-revalidate=600" }
+      ]
+    }
+  ]
 }
