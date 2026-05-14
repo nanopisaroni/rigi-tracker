@@ -1,5 +1,5 @@
 // RIGI Tracker — data layer
-// Source: Boletín Oficial, TN, Infobae, Ámbito. Update: May 2026.
+// Sources: Boletín Oficial (resoluciones ME), Casa Rosada, Infobae, Ámbito, La Nación, Cronista. Update: May 2026.
 
 window.RIGI = {
   sectors: {
@@ -18,17 +18,18 @@ window.RIGI = {
     aprobado:     { label: 'Aprobado',        color: '#6b7280' }
   },
 
-  // Approx province centroids on a 320x540 SVG of Argentina
+  // Province centroids on a 320x540 SVG of Argentina.
+  // Coords derived from approximate lat/lon → SVG mapping for the project locations.
   provinces: {
-    'Jujuy':         { region: 'NOA',       x: 130, y: 58 },
-    'Salta':         { region: 'NOA',       x: 152, y: 100 },
-    'Catamarca':     { region: 'NOA',       x: 138, y: 148 },
-    'Santa Fe':      { region: 'Litoral',   x: 200, y: 198 },
-    'San Juan':      { region: 'Cuyo',      x: 108, y: 220 },
-    'Mendoza':       { region: 'Cuyo',      x: 108, y: 278 },
-    'Buenos Aires':  { region: 'Pampeana',  x: 220, y: 310 },
-    'Neuquén':       { region: 'Patagonia', x: 105, y: 348 },
-    'Río Negro':     { region: 'Patagonia', x: 165, y: 388 }
+    'Jujuy':         { region: 'NOA',       x: 122, y: 32 },
+    'Salta':         { region: 'NOA',       x: 118, y: 60 },
+    'Catamarca':     { region: 'NOA',       x: 112, y: 90 },
+    'San Juan':      { region: 'Cuyo',      x: 92,  y: 140 },
+    'Santa Fe':      { region: 'Litoral',   x: 198, y: 168 },
+    'Mendoza':       { region: 'Cuyo',      x: 92,  y: 195 },
+    'Buenos Aires':  { region: 'Pampeana',  x: 208, y: 248 },
+    'Neuquén':       { region: 'Patagonia', x: 100, y: 278 },
+    'Río Negro':     { region: 'Patagonia', x: 145, y: 318 }
   },
 
   projects: [
@@ -39,7 +40,13 @@ window.RIGI = {
       province: 'Mendoza',
       amount: 211,
       location: 'Las Heras, Mendoza',
-      description: 'Primer proyecto del RIGI aprobado e inaugurado. Parque solar fotovoltaico de 305 MW de capacidad instalada, ya genera 100 MW y fue el primero del régimen en recibir habilitación de CAMMESA.',
+      approvalDate: '2025-01-08',
+      operationalDate: '2024 (100 MW) → 2026 (305 MW)',
+      directJobs: 500,
+      annualExportsUSDm: null,
+      companyCountry: 'AR',
+      ticker: 'YPF', tickerExchange: 'NYSE', tickerName: 'YPF S.A.',
+      description: 'Primer proyecto del RIGI aprobado. Parque solar fotovoltaico de 305 MW de capacidad instalada, ya genera 100 MW y fue el primero del régimen en recibir habilitación de CAMMESA.',
       timeline: '2024: inaugurado · 100 MW operativos · 305 MW a capacidad total',
       impact: '305 MW renovables. Reducción de emisiones. Abastecimiento de la red de Mendoza.',
       opportunities: [
@@ -57,6 +64,12 @@ window.RIGI = {
       province: 'Neuquén',
       amount: 2486,
       location: 'Allen (Neuquén) → Punta Colorada (Río Negro)',
+      approvalDate: '2025-03-21',
+      operationalDate: 'Fin 2026',
+      directJobs: null,
+      annualExportsUSDm: null,
+      companyCountry: null,
+      ticker: null, tickerExchange: null, tickerName: null,
       description: 'Oleoducto de 437 km que conectará la producción de Vaca Muerta con Punta Colorada para exportación. Operativo hacia fines de 2026.',
       timeline: '2025–2026: construcción · Fin 2026: puesta en operación',
       impact: 'Duplicación de la capacidad exportadora petrolera. Reducción de costos logísticos. Miles de empleos.',
@@ -68,7 +81,7 @@ window.RIGI = {
         'Soldadura especializada',
         'Campamentos y logística'
       ],
-      companies: 'YPF, Pan American Energy, Vista Energy, Pampa Energía, Pluspetrol, Chevron, Shell'
+      companies: 'Joint venture: YPF, Pan American Energy, Vista Energy, Pampa Energía, Pluspetrol, Chevron, Shell'
     },
     {
       id: 3, sector: 'oilgas', status: 'desarrollo',
@@ -77,6 +90,12 @@ window.RIGI = {
       province: 'Río Negro',
       amount: 6878,
       location: 'Golfo San Matías, Río Negro',
+      approvalDate: '2025-05-05',
+      operationalDate: '2027–2028',
+      directJobs: null,
+      annualExportsUSDm: null,
+      companyCountry: 'BM',
+      ticker: 'GLNG', tickerExchange: 'NASDAQ', tickerName: 'Golar LNG Ltd',
       description: 'Megaproyecto de licuefacción de gas natural. Permitirá exportar GNL desde Vaca Muerta a mercados internacionales. La inversión más grande del RIGI.',
       timeline: '2027: inicio de licuefacción',
       impact: 'Argentina como exportador de GNL. Divisas por miles de millones. Demanda sostenida de gas de Vaca Muerta.',
@@ -97,6 +116,12 @@ window.RIGI = {
       province: 'Salta',
       amount: 2700,
       location: 'Salar de Rincón, Salta',
+      approvalDate: '2025-06-03',
+      operationalDate: '2028',
+      directJobs: 2500,
+      annualExportsUSDm: null,
+      companyCountry: 'GB',
+      ticker: 'RIO', tickerExchange: 'NYSE', tickerName: 'Rio Tinto plc',
       description: 'Extracción y procesamiento de litio en el Salar de Rincón. La minera anglo-australiana apuesta por Argentina como hub global de litio.',
       timeline: '2025–2028: construcción y puesta en marcha',
       impact: 'Salta en el mapa del litio. Carbonato de litio de alta calidad para baterías. Empleo en la Puna salteña.',
@@ -117,6 +142,12 @@ window.RIGI = {
       province: 'Buenos Aires',
       amount: 286,
       location: 'San Nicolás, Buenos Aires',
+      approvalDate: '2025-07-22',
+      operationalDate: '2028 H1',
+      directJobs: 300,
+      annualExportsUSDm: 360,
+      companyCountry: 'AR',
+      ticker: null, tickerExchange: null, tickerName: null,
       description: 'Nueva planta siderúrgica para 360.000 toneladas anuales de insumos para industria nacional y exportación.',
       timeline: '2025–2027: construcción y puesta en marcha',
       impact: '360 mil tn/año de acero. Sustitución de importaciones. Integración con la cadena minera y energética.',
@@ -137,6 +168,12 @@ window.RIGI = {
       province: 'Catamarca',
       amount: 217,
       location: 'Salar del Hombre Muerto, Catamarca',
+      approvalDate: '2025-08-28',
+      operationalDate: '2026 H1',
+      directJobs: null,
+      annualExportsUSDm: 180,
+      companyCountry: 'AU',
+      ticker: 'GLN', tickerExchange: 'ASX', tickerName: 'Galan Lithium Limited',
       description: 'Proyecto de cloruro de litio de la firma australiana Galan Lithium. Exportará US$180 M anuales desde 2029.',
       timeline: '2027–2029: construcción · 2029: US$180 M/año en exportaciones',
       impact: 'US$180 M/año en exportaciones. Empleo en Catamarca. Cadena de valor del litio.',
@@ -156,6 +193,12 @@ window.RIGI = {
       province: 'Buenos Aires',
       amount: 250,
       location: 'Olavarría, Buenos Aires',
+      approvalDate: '2025-08-27',
+      operationalDate: '2026 Q4',
+      directJobs: null,
+      annualExportsUSDm: null,
+      companyCountry: 'LU',
+      ticker: 'MT', tickerExchange: 'NYSE', tickerName: 'ArcelorMittal SA',
       description: 'Parque eólico de 180 MW impulsado por Acindar (ArcelorMittal) y PCR. Energía renovable para la industria del acero y el SADI.',
       timeline: '2025–2027: construcción y conexión a red',
       impact: '180 MW renovables. Abastecimiento directo a la industria siderúrgica. Menor huella de carbono.',
@@ -171,10 +214,16 @@ window.RIGI = {
     {
       id: 8, sector: 'mining', status: 'exploracion',
       name: 'Los Azules',
-      company: 'McEwen Cooper',
+      company: 'McEwen Copper',
       province: 'San Juan',
       amount: 2672,
       location: 'San Juan',
+      approvalDate: '2025-10-14',
+      operationalDate: '2029–2030',
+      directJobs: null,
+      annualExportsUSDm: null,
+      companyCountry: 'CA',
+      ticker: 'MUX', tickerExchange: 'NYSE', tickerName: 'McEwen Mining Inc.',
       description: 'Uno de los proyectos de cobre más importantes del país. Exploración avanzada y estudio de factibilidad en curso.',
       timeline: '2025–2028: exploración, factibilidad y construcción',
       impact: 'Cobre de clase mundial. San Juan como provincia minera. Empleo directo e indirecto.',
@@ -186,7 +235,7 @@ window.RIGI = {
         'Chancado y molienda',
         'Logística de equipos y suministros'
       ],
-      companies: 'McEwen Cooper (Canadá)'
+      companies: 'McEwen Copper (subsidiaria de McEwen Mining, Canadá)'
     },
     {
       id: 9, sector: 'infrastructure', status: 'desarrollo',
@@ -195,6 +244,12 @@ window.RIGI = {
       province: 'Santa Fe',
       amount: 277,
       location: 'Timbúes, Santa Fe',
+      approvalDate: '2025-11-20',
+      operationalDate: '2027–2028',
+      directJobs: 200,
+      annualExportsUSDm: null,
+      companyCountry: 'AR',
+      ticker: null, tickerExchange: null, tickerName: null,
       description: 'Complejo logístico portuario para fertilizantes, hierro, productos siderúrgicos, granos y combustibles. Refuerza el polo agroindustrial santafesino.',
       timeline: '2025–2027: construcción',
       impact: 'Mayor capacidad de exportación/importación. Menor costo logístico para agro e industria. Integración con el Gran Rosario.',
@@ -211,10 +266,16 @@ window.RIGI = {
     {
       id: 10, sector: 'mining', status: 'desarrollo',
       name: 'Gualcamayo',
-      company: 'Minas Argentinas',
+      company: 'Minas Argentinas (Aisa Group)',
       province: 'San Juan',
       amount: 665,
       location: 'San Juan',
+      approvalDate: '2026-01-15',
+      operationalDate: '2027–2028',
+      directJobs: 1700,
+      annualExportsUSDm: null,
+      companyCountry: 'ES',
+      ticker: null, tickerExchange: null, tickerName: null,
       description: 'Ampliación de explotación de oro y plata con esquema de mineralización diferente. Alto impacto en empleo directo.',
       timeline: '2025–2028: nuevo esquema de explotación',
       impact: 'Extensión de vida útil. Empleo directo en San Juan. Producción sostenida de oro y plata.',
@@ -225,7 +286,7 @@ window.RIGI = {
         'Transporte de mineral',
         'Perforación y voladura'
       ],
-      companies: 'Minas Argentinas'
+      companies: 'Minas Argentinas (Aisa Group, España)'
     },
     {
       id: 11, sector: 'mining', status: 'ampliacion',
@@ -234,6 +295,12 @@ window.RIGI = {
       province: 'San Juan',
       amount: 380,
       location: 'San Juan',
+      approvalDate: '2026-02-27',
+      operationalDate: '2026 Q4',
+      directJobs: 1100,
+      annualExportsUSDm: 425,
+      companyCountry: 'CA',
+      ticker: 'B', tickerExchange: 'NYSE', tickerName: 'Barrick Mining Corporation',
       description: 'Ampliación de la mina de oro y plata Veladero. Una de las más importantes del país recibe inversión para extender su producción.',
       timeline: '2025–2027: ampliación y nuevos tajos',
       impact: 'Extensión de vida útil. Mantenimiento de empleo. Producción continua de oro y plata.',
@@ -253,6 +320,12 @@ window.RIGI = {
       province: 'Salta',
       amount: 760,
       location: 'Salta y Catamarca',
+      approvalDate: '2026-05-11',
+      operationalDate: '2029 Q3',
+      directJobs: null,
+      annualExportsUSDm: 417,
+      companyCountry: 'CA',
+      ticker: 'ABRA', tickerExchange: 'TSX', tickerName: 'AbraSilver Resource Corp.',
       description: 'Nueva mina de oro y plata de AbraSilver en la frontera entre Salta y Catamarca. Generará 1.200 empleos directos y US$417 M anuales de exportación.',
       timeline: '2025–2028: construcción y puesta en marcha',
       impact: '1.200 empleos directos. US$417 M/año en exportaciones. Desarrollo del NOA.',
@@ -272,6 +345,12 @@ window.RIGI = {
       province: 'Catamarca',
       amount: 530,
       location: 'Catamarca',
+      approvalDate: '2026-03-26',
+      operationalDate: '2026 Q3',
+      directJobs: null,
+      annualExportsUSDm: null,
+      companyCountry: 'GB',
+      ticker: 'RIO', tickerExchange: 'NYSE', tickerName: 'Rio Tinto plc',
       description: 'Ampliación de la producción de litio en Catamarca por parte de Río Tinto. Refuerza la apuesta global por Argentina como hub de litio para baterías.',
       timeline: '2026–2029: ampliación de producción',
       impact: 'Más producción de litio en Catamarca. Más exportaciones y empleo local.',
@@ -291,6 +370,12 @@ window.RIGI = {
       province: 'Neuquén',
       amount: 550,
       location: 'Neuquén → Buenos Aires',
+      approvalDate: '2026-05-13',
+      operationalDate: '2027 Q2',
+      directJobs: null,
+      annualExportsUSDm: null,
+      companyCountry: 'AR',
+      ticker: 'TGS', tickerExchange: 'NYSE', tickerName: 'Transportadora de Gas del Sur SA',
       description: 'Refuerzo de transporte de gas natural en 14 MM m³/día desde Vaca Muerta hacia Buenos Aires. Obra crítica para abastecer demanda interna y posibilitar más exportaciones.',
       timeline: '2025–2027: construcción',
       impact: '+14 MM m³/d de capacidad. Abastecimiento industrial y residencial. Más exportaciones a Chile y Brasil.',
@@ -307,11 +392,17 @@ window.RIGI = {
     {
       id: 15, sector: 'mining', status: 'ampliacion',
       name: 'Cauchari-Olaroz',
-      company: 'Ganfeng + America Lithium + JEMSE',
+      company: 'Ganfeng + Lithium Americas + JEMSE',
       province: 'Jujuy',
       amount: 1241,
       location: 'Salar Cauchari-Olaroz, Jujuy',
-      description: 'Ampliación del proyecto de litio para alcanzar 40.000 tn/año. Joint venture entre la china Ganfeng, America Lithium y la estatal jujeña JEMSE.',
+      approvalDate: '2026-05-14',
+      operationalDate: '2028–2029',
+      directJobs: null,
+      annualExportsUSDm: null,
+      companyCountry: 'CA',
+      ticker: 'LAC', tickerExchange: 'NYSE', tickerName: 'Lithium Americas Corp.',
+      description: 'Ampliación del proyecto de litio para alcanzar 40.000 tn/año. Joint venture entre la china Ganfeng, Lithium Americas y la estatal jujeña JEMSE.',
       timeline: '2025–2027: ampliación a 40.000 tn/año',
       impact: '40.000 tn/año de carbonato de litio. Uno de los proyectos de litio más grandes del país. Empleo en Jujuy.',
       opportunities: [
@@ -322,7 +413,7 @@ window.RIGI = {
         'Transporte a puerto',
         'Provisión de energía'
       ],
-      companies: 'Ganfeng Lithium (China), America Lithium, JEMSE (Jujuy)'
+      companies: 'Ganfeng Lithium (China), Lithium Americas (Canadá), JEMSE (Jujuy)'
     },
     {
       id: 16, sector: 'mining', status: 'aprobado',
@@ -331,6 +422,12 @@ window.RIGI = {
       province: 'Mendoza',
       amount: 891,
       location: 'Uspallata, Mendoza',
+      approvalDate: '2026-05-14',
+      operationalDate: '2029–2030',
+      directJobs: null,
+      annualExportsUSDm: null,
+      companyCountry: 'CH',
+      ticker: null, tickerExchange: null, tickerName: null,
       description: 'Megaproyecto minero de cobre en Uspallata. Aprobado por el Gobierno el 14 de mayo de 2026. Pertenece a la suiza Zonda Metals y la argentina Alberdi Energy.',
       timeline: '2026–2030: construcción y producción',
       impact: 'Cobre de alta ley. Primera gran mina de cobre en Mendoza. Empleo en Uspallata. Exportaciones estratégicas.',

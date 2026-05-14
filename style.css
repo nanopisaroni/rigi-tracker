@@ -213,6 +213,123 @@ button { font-family: inherit; cursor: pointer; }
   font-weight: 500;
 }
 
+/* ===== Hero approval timeline ===== */
+.atl {
+  margin-top: 32px;
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  background: var(--bg);
+  overflow: hidden;
+}
+.atl-head {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  padding: 12px 16px;
+  border-bottom: 1px solid var(--border);
+  background: var(--surface);
+  flex-wrap: wrap;
+}
+.atl-title {
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--text);
+  display: block;
+}
+.atl-meta {
+  font-size: 11.5px;
+  color: var(--text-3);
+  font-variant-numeric: tabular-nums;
+  display: block;
+  margin-top: 2px;
+}
+.atl-legend {
+  display: flex;
+  gap: 12px;
+  flex-wrap: wrap;
+  font-size: 11px;
+  color: var(--text-2);
+}
+.atl-legend span {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+}
+.atl-legend .ldot {
+  width: 8px; height: 8px;
+  border-radius: var(--radius-full);
+  display: inline-block;
+}
+.atl-chart {
+  position: relative;
+  padding: 16px 16px 8px;
+}
+.atl-chart svg {
+  display: block;
+  width: 100%;
+  height: 220px;
+}
+.atl text.atl-axis {
+  fill: var(--text-3);
+  font-size: 10px;
+  font-family: var(--mono);
+}
+.atl .atl-grid {
+  stroke: var(--border-soft);
+  stroke-width: 1;
+}
+.atl .atl-cum {
+  fill: var(--blue);
+  fill-opacity: 0.05;
+  stroke: var(--blue);
+  stroke-opacity: 0.55;
+  stroke-width: 1.4;
+}
+.atl .atl-cum-dot {
+  fill: var(--blue);
+  fill-opacity: 0.9;
+}
+.atl .atl-bubble {
+  cursor: pointer;
+  transition: stroke-width .15s, fill-opacity .15s;
+  fill-opacity: 0.85;
+  stroke: rgba(0,0,0,0.18);
+  stroke-width: 1;
+}
+.atl .atl-bubble:hover {
+  fill-opacity: 1;
+  stroke-width: 2;
+}
+.atl .atl-lane-label {
+  fill: var(--text-3);
+  font-size: 10px;
+  text-anchor: end;
+}
+.atl-tip {
+  position: absolute;
+  background: var(--text);
+  color: #fff;
+  font-size: 11px;
+  padding: 6px 9px;
+  border-radius: 4px;
+  pointer-events: none;
+  opacity: 0;
+  transform: translate(-50%, -100%);
+  white-space: nowrap;
+  transition: opacity .12s;
+  z-index: 5;
+  line-height: 1.4;
+}
+.atl-tip.show { opacity: 1; }
+.atl-tip strong { font-weight: 600; }
+.atl-tip small {
+  display: block;
+  opacity: 0.7;
+  font-weight: 400;
+  margin-top: 2px;
+}
+
 /* ===== Block / sections ===== */
 .block {
   padding: 56px 0;
@@ -774,6 +891,157 @@ button { font-family: inherit; cursor: pointer; }
   font-size: 13px;
 }
 
+/* ===== Stock ticker (inside project expand) ===== */
+.ticker {
+  grid-column: 1 / -1;
+  background: var(--bg);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 14px 16px;
+  margin-top: 4px;
+}
+.ticker-head {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  margin-bottom: 12px;
+  flex-wrap: wrap;
+}
+.ticker-id {
+  display: flex;
+  align-items: baseline;
+  gap: 8px;
+}
+.ticker-symbol {
+  font-family: var(--mono);
+  font-size: 14px;
+  font-weight: 600;
+  letter-spacing: 0.04em;
+  color: var(--text);
+}
+.ticker-exch {
+  font-size: 10.5px;
+  font-weight: 500;
+  color: var(--text-3);
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+}
+.ticker-name {
+  font-size: 12px;
+  color: var(--text-2);
+}
+.ticker-price-block {
+  display: flex;
+  align-items: baseline;
+  gap: 10px;
+  font-variant-numeric: tabular-nums;
+}
+.ticker-price {
+  font-family: var(--mono);
+  font-size: 16px;
+  font-weight: 600;
+  color: var(--text);
+}
+.ticker-change {
+  font-family: var(--mono);
+  font-size: 12px;
+  font-weight: 500;
+  padding: 1px 6px;
+  border-radius: 4px;
+}
+.ticker-change.up { background: var(--green-100); color: #15803d; }
+.ticker-change.down { background: var(--red-100); color: #b91c1c; }
+.ticker-change.flat { background: var(--surface-2); color: var(--text-2); }
+.ticker-ranges {
+  display: inline-flex;
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-sm);
+  padding: 2px;
+  font-family: var(--mono);
+}
+.ticker-range {
+  background: transparent;
+  border: none;
+  font-size: 11px;
+  font-weight: 500;
+  color: var(--text-2);
+  padding: 4px 10px;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: all .15s;
+  font-family: inherit;
+}
+.ticker-range:hover { color: var(--text); }
+.ticker-range.active {
+  background: var(--bg);
+  color: var(--text);
+  box-shadow: 0 0 0 1px var(--border);
+}
+.ticker-chart {
+  position: relative;
+  height: 100px;
+  margin-top: 4px;
+}
+.ticker-chart svg {
+  display: block;
+  width: 100%;
+  height: 100%;
+}
+.ticker-chart .tk-area {
+  fill: var(--blue);
+  fill-opacity: 0.06;
+}
+.ticker-chart .tk-area.up { fill: var(--green); fill-opacity: 0.06; }
+.ticker-chart .tk-area.down { fill: var(--red); fill-opacity: 0.06; }
+.ticker-chart .tk-line {
+  fill: none;
+  stroke-width: 1.5;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+.ticker-chart .tk-line.up { stroke: var(--green); }
+.ticker-chart .tk-line.down { stroke: var(--red); }
+.ticker-chart .tk-line.flat { stroke: var(--text-2); }
+.ticker-chart .tk-base {
+  stroke: var(--border);
+  stroke-dasharray: 2 2;
+  stroke-width: 1;
+}
+.ticker-meta {
+  display: flex;
+  gap: 16px;
+  flex-wrap: wrap;
+  margin-top: 8px;
+  font-size: 11px;
+  color: var(--text-3);
+  font-variant-numeric: tabular-nums;
+}
+.ticker-meta span { display: inline-flex; gap: 4px; }
+.ticker-meta strong {
+  color: var(--text-2);
+  font-weight: 500;
+  font-family: var(--mono);
+}
+.ticker-status {
+  font-size: 11px;
+  color: var(--text-3);
+  padding: 6px 0;
+}
+.ticker-status.error { color: var(--red); }
+.ticker-skel {
+  height: 100px;
+  background: linear-gradient(90deg, var(--surface-2) 0%, var(--surface) 50%, var(--surface-2) 100%);
+  background-size: 200% 100%;
+  border-radius: 4px;
+  animation: tkShimmer 1.4s ease-in-out infinite;
+}
+@keyframes tkShimmer {
+  0% { background-position: 200% 0; }
+  100% { background-position: -200% 0; }
+}
+
 /* ===== Timeline ===== */
 .timeline {
   list-style: none;
@@ -871,11 +1139,13 @@ button { font-family: inherit; cursor: pointer; }
   flex-wrap: wrap;
   gap: 6px;
 }
+.foot-link,
 .foot-cred a {
   color: var(--text-2);
   font-weight: 500;
   transition: color .15s;
 }
+.foot-link:hover,
 .foot-cred a:hover { color: var(--blue); }
 .sep { color: var(--text-4); }
 
@@ -890,8 +1160,18 @@ button { font-family: inherit; cursor: pointer; }
   .timeline li { grid-template-columns: 72px 1fr; gap: 12px; }
 }
 
+@media (max-width: 980px) {
+  .atl-chart svg { height: 200px; }
+}
 @media (max-width: 768px) {
   .container { padding: 0 16px; }
+  .atl { margin-top: 24px; }
+  .atl-chart { padding: 12px 8px 4px; }
+  .atl-chart svg { height: 200px; }
+  .atl-legend { gap: 8px; font-size: 10.5px; }
+  .ticker-head { flex-direction: column; align-items: stretch; gap: 10px; }
+  .ticker-price-block { justify-content: space-between; }
+  .ticker-ranges { align-self: flex-start; }
   .topnav {
     position: absolute;
     top: 56px; left: 0; right: 0;
