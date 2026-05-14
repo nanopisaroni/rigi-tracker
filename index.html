@@ -3,647 +3,298 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>RIGI Tracker — Seguimiento de los 16 proyectos aprobados | Kalei Ventures</title>
-  <meta name="description" content="Seguimiento completo de los 16 proyectos aprobados del RIGI en Argentina: inversiones por más de US$21.000 millones en energía, minería, petróleo, gas e infraestructura.">
+  <title>RIGI Tracker — 16 proyectos aprobados · US$21.000 M</title>
+  <meta name="description" content="Seguimiento de los 16 proyectos aprobados del Régimen de Incentivo para Grandes Inversiones (RIGI) en Argentina: inversiones por más de US$21.000 millones en energía, minería, petróleo, gas e infraestructura.">
+  <meta property="og:title" content="RIGI Tracker — 16 proyectos · US$21.000 M">
+  <meta property="og:description" content="Quién invierte, dónde, cuánto y qué oportunidades abren los proyectos RIGI en Argentina.">
+  <meta property="og:type" content="website">
+  <meta name="theme-color" content="#ffffff">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="style.css">
-  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' fill='%23070e18' rx='6'/%3E%3Ctext x='16' y='23' text-anchor='middle' font-family='Montserrat' font-weight='800' font-size='16' fill='%2358c6D0'%3ER%3C/text%3E%3C/svg%3E">
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' fill='%23ffffff' rx='6'/%3E%3Ccircle cx='16' cy='16' r='5' fill='%232563eb'/%3E%3C/svg%3E">
 </head>
 <body>
 
-<div class="container">
-  <nav>
-    <div class="logo">RIGI<span> Tracker</span></div>
-    <div class="nav-links">
-      <a href="#projects">Proyectos</a>
+<header class="topbar">
+  <div class="container topbar-inner">
+    <a class="brand" href="#top">
+      <span class="brand-dot" aria-hidden="true"></span>
+      <span class="brand-name">RIGI Tracker</span>
+    </a>
+    <nav class="topnav">
+      <a href="#overview">Resumen</a>
       <a href="#sectors">Sectores</a>
+      <a href="#provinces">Provincias</a>
+      <a href="#projects">Proyectos</a>
       <a href="#timeline">Timeline</a>
       <a href="#opportunities">Oportunidades</a>
-    </div>
-  </nav>
-</div>
-
-<!-- Hero -->
-<section class="hero">
-  <div class="container">
-    <h1>RIGI: <span>16 proyectos</span> por más de <span>US$21.000 millones</span></h1>
-    <p>El Régimen de Incentivo para Grandes Inversiones ya aprobó 16 megaproyectos en Argentina. Este tracker monitorea cada uno: quiénes invierten, timelines, impacto esperado y las oportunidades de negocio que abren.</p>
-    <div class="stats-bar">
-      <div class="stat-card">
-        <div class="num">16</div>
-        <div class="label">Proyectos aprobados</div>
-      </div>
-      <div class="stat-card">
-        <div class="num" style="color:var(--green)">US$21.000 M</div>
-        <div class="label">Inversión total</div>
-      </div>
-      <div class="stat-card">
-        <div class="num">9</div>
-        <div class="label">Provincias</div>
-      </div>
-      <div class="stat-card">
-        <div class="num">4</div>
-        <div class="label">Sectores</div>
-      </div>
-      <div class="stat-card">
-        <div class="num" style="color:var(--orange)">22+</div>
-        <div class="label">Proyectos en análisis</div>
-      </div>
-    </div>
+    </nav>
+    <button class="topnav-toggle" id="topnavToggle" aria-label="Abrir menú" aria-expanded="false">
+      <span></span><span></span><span></span>
+    </button>
   </div>
-</section>
+</header>
 
-<div class="divider"></div>
+<main id="top">
 
-<!-- Sector overview -->
-<section id="sectors">
-  <div class="container">
-    <div class="section-label">Sectores</div>
-    <h2 class="section-title">Distribución de la inversión</h2>
-    <p class="section-desc">Los 16 proyectos se distribuyen en 4 sectores clave para el desarrollo productivo argentino.</p>
-    <div class="sector-grid">
-      <div class="sector-card">
-        <div class="sector-icon">🛢️</div>
-        <h3>Oil &amp; Gas</h3>
-        <p>Vaca Muerta, oleoductos y GNL. La columna vertebral de la transición energética argentina.</p>
-        <div class="count">3 proyectos</div>
-      </div>
-      <div class="sector-card">
-        <div class="sector-icon">⛏️</div>
-        <h3>Minería</h3>
-        <p>Litio, cobre, oro y plata. Argentina en el mapa global de la minería estratégica.</p>
-        <div class="count">9 proyectos</div>
-      </div>
-      <div class="sector-card">
-        <div class="sector-icon">⚡</div>
-        <h3>Energía Eléctrica</h3>
-        <p>Parques solares y eólicos. Generación renovable para la matriz energética.</p>
-        <div class="count">2 proyectos</div>
-      </div>
-      <div class="sector-card">
-        <div class="sector-icon">🏗️</div>
-        <h3>Infraestructura &amp; Industria</h3>
-        <p>Puertos, gasoductos y plantas siderúrgicas. La base para la competitividad.</p>
-        <div class="count">2 proyectos</div>
-      </div>
+  <section class="hero" id="overview">
+    <div class="container">
+      <div class="eyebrow">Tracker · Actualizado mayo 2026</div>
+      <h1>El RIGI ya aprobó <span class="hl">16 proyectos</span> por más de <span class="hl">US$21.000 millones</span></h1>
+      <p class="lede">Quién invierte, dónde, cuánto y qué oportunidades de negocio abre cada uno de los proyectos del Régimen de Incentivo para Grandes Inversiones en Argentina.</p>
+
+      <ul class="kpi-strip" role="list">
+        <li><span class="kpi-num">16</span><span class="kpi-label">proyectos aprobados</span></li>
+        <li><span class="kpi-num">US$21.000<span class="kpi-unit">M</span></span><span class="kpi-label">inversión total</span></li>
+        <li><span class="kpi-num">9</span><span class="kpi-label">provincias</span></li>
+        <li><span class="kpi-num">4</span><span class="kpi-label">sectores</span></li>
+        <li><span class="kpi-num">22<span class="kpi-unit">+</span></span><span class="kpi-label">en análisis</span></li>
+      </ul>
     </div>
-  </div>
-</section>
+  </section>
 
-<div class="divider"></div>
-
-<!-- Projects -->
-<section id="projects">
-  <div class="container">
-    <div class="section-label">Proyectos</div>
-    <h2 class="section-title">Los 16 proyectos RIGI aprobados</h2>
-    <p class="section-desc">Hacé clic en cada proyecto para ver detalles completos: empresas, timeline, impacto y oportunidades de negocio.</p>
-
-    <div class="filter-bar" id="filterBar">
-      <button class="filter-btn active" data-filter="all">Todos</button>
-      <button class="filter-btn" data-filter="energy">⚡ Energía</button>
-      <button class="filter-btn" data-filter="oilgas">🛢️ Oil &amp; Gas</button>
-      <button class="filter-btn" data-filter="mining">⛏️ Minería</button>
-      <button class="filter-btn" data-filter="infrastructure">🏗️ Infraestructura</button>
-    </div>
-
-    <div id="projectList">
-      <!-- Populated by JS -->
-    </div>
-  </div>
-</section>
-
-<div class="divider"></div>
-
-<!-- Timeline -->
-<section id="timeline">
-  <div class="container">
-    <div class="section-label">Timeline</div>
-    <h2 class="section-title">Hitos clave del RIGI</h2>
-    <p class="section-desc">Línea de tiempo desde la creación del régimen hasta los proyectos más recientes.</p>
-    <div class="timeline">
-      <div class="timeline-item">
-        <div class="date">Julio 2024</div>
-        <h4>Ley de Bases aprobada — RIGI creado</h4>
-        <p>Se promulga la Ley 27.742 que crea el Régimen de Incentivo para Grandes Inversiones, con un piso de US$200 millones por proyecto.</p>
-      </div>
-      <div class="timeline-item">
-        <div class="date">Octubre 2024</div>
-        <h4>Reglamentación del RIGI</h4>
-        <p>El Poder Ejecutivo reglamenta el régimen, habilitando la presentación de proyectos. Comienzan a llegar las primeras solicitudes.</p>
-      </div>
-      <div class="timeline-item">
-        <div class="date">Diciembre 2024</div>
-        <h4>Primer proyecto aprobado e inaugurado</h4>
-        <p>El Parque Solar YPF Luz en Las Heras, Mendoza, se convierte en el primer proyecto RIGI aprobado y también el primero en inaugurarse (100 MW operativos).</p>
-      </div>
-      <div class="timeline-item">
-        <div class="date">Febrero 2025</div>
-        <h4>VMOS, GNL, Río Tinto y Sidersa</h4>
-        <p>Se aprueban los grandes proyectos de infraestructura energética: Vaca Muerta Oleoducto Sur, GNL PAE-Golar, Río Tinto (litio) y Sidersa (siderurgia).</p>
-      </div>
-      <div class="timeline-item">
-        <div class="date">Fines 2025</div>
-        <h4>Nuevos proyectos mineros y energéticos</h4>
-        <p>Se suman Los Azules (cobre), Gualcamayo, Veladero, Diablillos, Fénix, Gasoducto Perito Moreno, Cauchari-Olaroz y el Parque Eólico Olavarría.</p>
-      </div>
-      <div class="timeline-item">
-        <div class="date">Mayo 2026</div>
-        <h4>Proyecto San Jorge (PSJ) y boom minero</h4>
-        <p>Se aprueba el proyecto de cobre San Jorge en Mendoza por US$891 millones. El RIGI llega a 16 proyectos y US$21.000 millones de inversión. Al menos 22 proyectos más están en análisis.</p>
-      </div>
-      <div class="timeline-item">
-        <div class="date">Fines 2026</div>
-        <h4>Primeras operaciones: VMOS</h4>
-        <p>Se espera que el Vaca Muerta Oleoducto Sur esté operativo, marcando un antes y después en la capacidad de exportación petrolera argentina.</p>
-      </div>
-      <div class="timeline-item">
-        <div class="date">2027+</div>
-        <h4>GNL, litio y cobre en producción</h4>
-        <p>Southern Energy inicia licuefacción en Río Negro. Los proyectos mineros de litio y cobre comienzan producción escalonada. Se esperan más proyectos entrando al "Súper RIGI".</p>
-      </div>
-    </div>
-  </div>
-</section>
-
-<div class="divider"></div>
-
-<!-- Opportunities -->
-<section id="opportunities">
-  <div class="container">
-    <div class="section-label">Oportunidades</div>
-    <h2 class="section-title">¿Qué negocios se abren?</h2>
-    <p class="section-desc">Cada proyecto RIGI genera una cadena de oportunidades para proveedores, servicios, tecnología y más.</p>
-    <div class="opp-grid">
-      <div class="opp-card">
-        <div class="icon">🔧</div>
-        <h3>Ingeniería &amp; Construcción</h3>
-        <p>Obra civil, montaje electromecánico, tuberías, plantas de proceso. Demanda masiva de ingeniería para oleoductos, plantas de GNL, parques solares y minas.</p>
-      </div>
-      <div class="opp-card">
-        <div class="icon">📡</div>
-        <h3>Tecnología &amp; Automatización</h3>
-        <p>Sistemas SCADA, IoT para monitoreo remoto, sensores, gemelos digitales, automatización minera e industrial. Oportunidad para startups de IA e industria 4.0.</p>
-      </div>
-      <div class="opp-card">
-        <div class="icon">🚛</div>
-        <h3>Logística &amp; Transporte</h3>
-        <p>Transporte de equipos pesados, insumos, personal. Logística puerto-interior para exportaciones mineras y energéticas. Infraestructura de apoyo.</p>
-      </div>
-      <div class="opp-card">
-        <div class="icon">⚡</div>
-        <h3>Energía &amp; Servicios Auxiliares</h3>
-        <p>Generación distribuida para operaciones mineras, eficiencia energética, suministro de combustibles y lubricantes para flotas y maquinaria.</p>
-      </div>
-      <div class="opp-card">
-        <div class="icon">🧪</div>
-        <h3>Servicios Ambientales &amp; Laboratorio</h3>
-        <p>Monitoreo ambiental, ensayos de materiales, análisis químicos (litio, cobre), consultoría en sustentabilidad y compliance RIGI.</p>
-      </div>
-      <div class="opp-card">
-        <div class="icon">🏨</div>
-        <h3>Servicios para Comunidades</h3>
-        <p>Hotelería, campamentos, alimentación, salud ocupacional, transporte de personal. Los proyectos mineros generan empleo directo en zonas alejadas.</p>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- Footer -->
-<div class="container">
-  <footer>
-    <span>© 2026 RIGI Tracker — Por <a href="https://kaleiventures.com" style="color:var(--cyan);text-decoration:none;">Kalei Ventures</a></span>
-    <span>Fuente: TN, Infobae, Ámbito, Boletín Oficial | Actualizado: Mayo 2026</span>
-  </footer>
-</div>
-
-<script>
-  const projects = [
-    {
-      id: 1, sector: 'energy',
-      icon: '☀️',
-      bg: 'linear-gradient(135deg, #f4a832, #d48d20)',
-      name: 'Parque solar YPF Luz',
-      company: 'YPF Luz',
-      amount: 'US$211 M',
-      location: 'Las Heras, Mendoza',
-      status: 'Operativo (desde dic 2024)',
-      description: 'Primer proyecto del RIGI aprobado e inaugurado. Parque solar fotovoltaico de 305 MW de capacidad instalada, ya genera 100 MW de energía renovable y fue el primero del régimen en recibir habilitación de CAMMESA.',
-      timeline: '2024: Inaugurado. 100 MW operativos. 305 MW a capacidad total.',
-      impact: 'Generación de 305 MW renovables. Reducción de emisiones. Abastecimiento eléctrico para la red de Mendoza.',
-      opportunities: [
-        'Mantenimiento de paneles y equipos eléctricos',
-        'Monitoreo y optimización de generación vía IA',
-        'Expansión a nuevas fases del parque',
-        'Servicios de seguridad patrimonial y operativa'
-      ],
-      companies: 'YPF Luz (subsidiaria de YPF)'
-    },
-    {
-      id: 2, sector: 'oilgas',
-      icon: '🛢️',
-      bg: 'linear-gradient(135deg, #c36039, #a04e2e)',
-      name: 'Vaca Muerta Oleoducto Sur (VMOS)',
-      company: 'YPF, PAE, Vista, Pampa Energía, Pluspetrol, Chevron, Shell',
-      amount: 'US$2.486 M',
-      location: 'Allen (Neuquén) → Punta Colorada (Río Negro)',
-      status: 'En construcción',
-      description: 'Oleoducto de 437 km de extensión que conectará la producción de Vaca Muerta con Punta Colorada para exportación. Operativo hacia fines de 2026. Uno de los proyectos de infraestructura más grandes del país.',
-      timeline: '2025-2026: Construcción. Fines 2026: Puesta en operación.',
-      impact: 'Duplicación de capacidad de exportación petrolera. Reducción de costos logísticos. Generación de miles de empleos en construcción y operación.',
-      opportunities: [
-        'Provisión de cañerías y válvulas de alta presión',
-        'Ingeniería de detalle y supervisión de obra',
-        'Sistemas de monitoreo y detección de fugas',
-        'Bombas y equipos de impulsión',
-        'Servicios de soldadura especializada',
-        'Campamentos y logística para personal de obra'
-      ],
-      companies: 'YPF, Pan American Energy (PAE), Vista Energy, Pampa Energía, Pluspetrol, Chevron, Shell'
-    },
-    {
-      id: 3, sector: 'oilgas',
-      icon: '🧊',
-      bg: 'linear-gradient(135deg, #28373D, #1a2529)',
-      name: 'GNL PAE-Golar / Southern Energy',
-      company: 'Southern Energy (PAE + Golar)',
-      amount: 'US$6.878 M',
-      location: 'Golfo San Matías, Río Negro',
-      status: 'En desarrollo',
-      description: 'Megaproyecto de licuefacción de gas natural en el Golfo San Matías. La planta permitirá exportar GNL desde Vaca Muerta a mercados internacionales. La inversión más grande de todo el RIGI.',
-      timeline: '2027: Inicio de operaciones de licuefacción.',
-      impact: 'Posiciona a Argentina como exportador de GNL. Generación de divisas por miles de millones. Demanda sostenida de gas de Vaca Muerta. Eslabón clave de la cadena de valor.',
-      opportunities: [
-        'Ingeniería criogénica y plantas de licuefacción',
-        'Buques metaneros y logística portuaria',
-        'Provisión de equipos de compresión y tratamiento de gas',
-        'Mantenimiento especializado en criogenia',
-        'Servicios de inspección y certificación',
-        'Desarrollo de proveedores locales para la industria GNL'
-      ],
-      companies: 'Southern Energy (joint venture entre PAE y Golar LNG)'
-    },
-    {
-      id: 4, sector: 'mining',
-      icon: '🧪',
-      bg: 'linear-gradient(135deg, #58c6D0, #3daab3)',
-      name: 'Río Tinto — Litio Salar de Rincón',
-      company: 'Río Tinto',
-      amount: 'US$2.700 M',
-      location: 'Salar de Rincón, Salta',
-      status: 'En desarrollo',
-      description: 'Extracción y procesamiento de litio en el Salar de Rincón. La minera anglo-australiana Río Tinto, una de las más grandes del mundo, apuesta por Argentina como hub global de litio.',
-      timeline: '2025-2028: Construcción y puesta en marcha.',
-      impact: 'Posiciona a Salta en el mapa del litio. Producción de carbonato de litio de alta calidad para baterías. Empleo directo e indirecto en la Puna salteña.',
-      opportunities: [
-        'Servicios de perforación y exploración',
-        'Plantas de evaporación y procesamiento químico',
-        'Equipos para manejo de salmueras',
-        'Laboratorios de control de calidad',
-        'Campamentos e infraestructura en la Puna',
-        'Transporte de insumos y producto terminado'
-      ],
-      companies: 'Río Tinto (Reino Unido / Australia)'
-    },
-    {
-      id: 5, sector: 'infrastructure',
-      icon: '🏭',
-      bg: 'linear-gradient(135deg, #F48630, #d66d20)',
-      name: 'Sidersa — Planta siderúrgica',
-      company: 'Sidersa',
-      amount: 'US$286 M',
-      location: 'San Nicolás, Buenos Aires',
-      status: 'En desarrollo',
-      description: 'Nueva planta siderúrgica en San Nicolás para producir 360.000 toneladas anuales de insumos para la industria nacional y exportación. Refuerza la capacidad industrial del país.',
-      timeline: '2025-2027: Construcción y puesta en marcha.',
-      impact: '360.000 tn/año de acero para industria y exportación. Sustitución de importaciones. Integración vertical con la cadena de valor minera y energética.',
-      opportunities: [
-        'Ingeniería de plantas siderúrgicas',
-        'Provisión de equipos de laminación y hornos',
-        'Manejo de materiales y logística pesada',
-        'Servicios de mantenimiento industrial',
-        'Comercialización de productos de acero',
-        'Transporte ferroviario y portuario'
-      ],
-      companies: 'Sidersa'
-    },
-    {
-      id: 6, sector: 'mining',
-      icon: '🧪',
-      bg: 'linear-gradient(135deg, #58c6D0, #3daab3)',
-      name: 'Salar del Hombre Muerto',
-      company: 'Galan Lithium',
-      amount: 'US$217 M',
-      location: 'Salar del Hombre Muerto, Catamarca',
-      status: 'En desarrollo',
-      description: 'Proyecto de cloruro de litio encabezado por la firma australiana Galan Lithium. Exportará US$180 millones anuales a partir de 2029 desde el Salar del Hombre Muerto.',
-      timeline: '2027-2029: Construcción y producción. 2029: Exportaciones por US$180 M/año.',
-      impact: 'US$180 M/año en exportaciones de litio. Empleo en Catamarca. Fortalecimiento de la cadena de valor del litio argentino.',
-      opportunities: [
-        'Perforación y bombeo de salmueras',
-        'Equipos de evaporación solar',
-        'Análisis químico y control de calidad',
-        'Logística en la Puna catamarqueña',
-        'Construcción de campamentos'
-      ],
-      companies: 'Galan Lithium (Australia)'
-    },
-    {
-      id: 7, sector: 'energy',
-      icon: '💨',
-      bg: 'linear-gradient(135deg, #f4a832, #d48d20)',
-      name: 'Parque eólico Olavarría',
-      company: 'Acindar / PCR',
-      amount: 'US$250 M',
-      location: 'Olavarría, Buenos Aires',
-      status: 'En desarrollo',
-      description: 'Parque eólico de 180 MW de capacidad, impulsado por Acindar (Grupo ArcelorMittal) y PCR. Energía renovable para la industria del acero y el sistema interconectado.',
-      timeline: '2025-2027: Construcción y conexión a red.',
-      impact: '180 MW renovables. Abastecimiento directo a la industria siderúrgica. Reducción de huella de carbono del acero argentino.',
-      opportunities: [
-        'Montaje de aerogeneradores',
-        'Obra civil de fundaciones y caminos',
-        'Mantenimiento de turbinas eólicas',
-        'Sistemas de almacenamiento de energía',
-        'Conexión eléctrica y subestaciones'
-      ],
-      companies: 'Acindar (ArcelorMittal), PCR'
-    },
-    {
-      id: 8, sector: 'mining',
-      icon: '🟤',
-      bg: 'linear-gradient(135deg, #28373D, #1a2529)',
-      name: 'Los Azules',
-      company: 'McEwen Cooper',
-      amount: 'US$2.672 M',
-      location: 'San Juan',
-      status: 'En exploración avanzada',
-      description: 'Proyecto de cobre de la canadiense McEwen Cooper. Uno de los proyectos de cobre más importantes del país, con exploración avanzada y factibilidad en curso.',
-      timeline: '2025-2028: Exploración, factibilidad y construcción.',
-      impact: 'Producción de cobre de clase mundial. Posicionamiento de San Juan como provincia minera. Empleo directo e indirecto significativo.',
-      opportunities: [
-        'Perforación diamantina y exploración',
-        'Estudios de impacto ambiental',
-        'Ingeniería de mina y planta concentradora',
-        'Caminos e infraestructura vial',
-        'Equipos de chancado y molienda',
-        'Logística de equipos y suministros'
-      ],
-      companies: 'McEwen Cooper (Canadá)'
-    },
-    {
-      id: 9, sector: 'infrastructure',
-      icon: '🚢',
-      bg: 'linear-gradient(135deg, #F48630, #d66d20)',
-      name: 'Puerto multipropósito Timbúes',
-      company: '—',
-      amount: 'US$277 M',
-      location: 'Timbúes, Santa Fe',
-      status: 'En desarrollo',
-      description: 'Complejo logístico portuario para almacenar fertilizantes, hierro, productos siderúrgicos, granos y combustibles. Refuerza la capacidad del polo agroindustrial santafesino.',
-      timeline: '2025-2027: Construcción.',
-      impact: 'Mayor capacidad de exportación/importación. Reducción de costos logísticos para el agro y la industria. Integración con el nodo portuario del Gran Rosario.',
-      opportunities: [
-        'Dragado y obras portuarias',
-        'Equipos de carga y descarga',
-        'Silos y almacenes',
-        'Gestión logística y operación portuaria',
-        'Conexión ferroviaria y vial',
-        'Servicios a buques'
-      ],
-      companies: 'Por confirmar'
-    },
-    {
-      id: 10, sector: 'mining',
-      icon: '🥇',
-      bg: 'linear-gradient(135deg, #f4a832, #d48d20)',
-      name: 'Gualcamayo',
-      company: 'Minas Argentinas',
-      amount: 'US$665 M',
-      location: 'San Juan',
-      status: 'En desarrollo',
-      description: 'Ampliación de la explotación de oro y plata mediante un esquema de mineralización diferente, con alto impacto en empleo directo. Minas Argentinas busca extender la vida útil de la mina.',
-      timeline: '2025-2028: Nuevo esquema de explotación.',
-      impact: 'Extensión de vida útil de la mina. Empleo directo en San Juan. Producción sostenida de oro y plata.',
-      opportunities: [
-        'Provisión de equipos de minería subterránea',
-        'Ventilación y sistemas de seguridad minera',
-        'Plantas de procesamiento de minerales',
-        'Transporte de mineral',
-        'Servicios de perforación y voladura'
-      ],
-      companies: 'Minas Argentinas'
-    },
-    {
-      id: 11, sector: 'mining',
-      icon: '🥇',
-      bg: 'linear-gradient(135deg, #c36039, #a04e2e)',
-      name: 'Veladero',
-      company: 'Barrick Mining',
-      amount: 'US$380 M',
-      location: 'San Juan',
-      status: 'En ampliación',
-      description: 'Ampliación de la mina de oro y plata Veladero, operada por la canadiense Barrick Mining. Una de las minas más importantes de Argentina recibe nueva inversión para extender su producción.',
-      timeline: '2025-2027: Ampliación y nuevos tajos.',
-      impact: 'Extensión de vida útil de una de las minas más grandes del país. Mantenimiento de empleo. Producción continua de oro y plata.',
-      opportunities: [
-        'Movimiento de suelo y minería a cielo abierto',
-        'Equipos de carguío y transporte',
-        'Mantenimiento de flota minera',
-        'Servicios de tronadura',
-        'Gestión de residuos mineros'
-      ],
-      companies: 'Barrick Mining (Canadá)'
-    },
-    {
-      id: 12, sector: 'mining',
-      icon: '🥇',
-      bg: 'linear-gradient(135deg, #58c6D0, #3daab3)',
-      name: 'Diablillos',
-      company: 'AbraSilver',
-      amount: 'US$760 M',
-      location: 'Salta y Catamarca',
-      status: 'En desarrollo',
-      description: 'Nueva mina de oro y plata de AbraSilver en la frontera entre Salta y Catamarca. Generará 1.200 empleos directos y tiene un potencial exportador estimado en US$417 millones.',
-      timeline: '2025-2028: Construcción y puesta en marcha.',
-      impact: '1.200 empleos directos. US$417 M/año en exportaciones. Desarrollo de las provincias del NOA.',
-      opportunities: [
-        'Construcción de planta de procesos',
-        'Equipos de molienda y flotación',
-        'Campamentos e infraestructura',
-        'Logística de insumos y producción',
-        'Estudios geotécnicos y ambientales'
-      ],
-      companies: 'AbraSilver (Canadá)'
-    },
-    {
-      id: 13, sector: 'mining',
-      icon: '🧪',
-      bg: 'linear-gradient(135deg, #28373D, #1a2529)',
-      name: 'Fénix',
-      company: 'Río Tinto',
-      amount: 'US$530 M',
-      location: 'Catamarca',
-      status: 'En ampliación',
-      description: 'Ampliación de la producción de litio en Catamarca por parte de Río Tinto. Refuerza la apuesta de la minera global por la Argentina como hub de litio para baterías.',
-      timeline: '2026-2029: Ampliación de producción.',
-      impact: 'Incremento de producción de litio en Catamarca. Más exportaciones y empleo local.',
-      opportunities: [
-        'Ampliación de piletas de evaporación',
-        'Equipos de proceso químico',
-        'Mantenimiento industrial',
-        'Servicios de laboratorio',
-        'Infraestructura en la Puna'
-      ],
-      companies: 'Río Tinto (Reino Unido / Australia)'
-    },
-    {
-      id: 14, sector: 'oilgas',
-      icon: '🔥',
-      bg: 'linear-gradient(135deg, #F48630, #d66d20)',
-      name: 'Ampliación Gasoducto Perito Moreno',
-      company: 'Transportadora Gas del Sur (TGS)',
-      amount: 'US$550 M',
-      location: 'Neuquén → Buenos Aires',
-      status: 'En desarrollo',
-      description: 'Refuerzo de la capacidad de transporte de gas natural en 14 millones de metros cúbicos diarios desde Vaca Muerta hacia la provincia de Buenos Aires. Obra crítica para abastecer la demanda interna y permitir mayores exportaciones.',
-      timeline: '2025-2027: Construcción.',
-      impact: '+14 MM m³/d de capacidad de transporte. Mayor abastecimiento industrial y residencial. Posibilita mayores exportaciones a Chile y Brasil.',
-      opportunities: [
-        'Provisión de cañerías de gran diámetro',
-        'Estaciones de compresión',
-        'Ingeniería de gasoductos',
-        'Servicios de soldadura y tendido',
-        'Válvulas y sistemas de control',
-        'Estudios de impacto ambiental'
-      ],
-      companies: 'Transportadora Gas del Sur (TGS)'
-    },
-    {
-      id: 15, sector: 'mining',
-      icon: '🧪',
-      bg: 'linear-gradient(135deg, #58c6D0, #3daab3)',
-      name: 'Cauchari-Olaroz',
-      company: 'Ganfeng Lithium, America Lithium, JEMSE',
-      amount: 'US$1.241 M',
-      location: 'Salar Cauchari-Olaroz, Jujuy',
-      status: 'En ampliación',
-      description: 'Ampliación del proyecto de litio en el Salar Cauchari-Olaroz. Busca alcanzar una capacidad de 40.000 toneladas anuales de litio. Joint venture entre la china Ganfeng Lithium, America Lithium y la estatal jujeña JEMSE.',
-      timeline: '2025-2027: Ampliación a 40.000 tn/año.',
-      impact: '40.000 tn/año de carbonato de litio. Uno de los proyectos de litio más grandes de Argentina. Empleo masivo en Jujuy. Exportaciones estratégicas.',
-      opportunities: [
-        'Construcción de planta de carbonato de litio',
-        'Equipos de evaporación y cristalización',
-        'Laboratorios de ensayo',
-        'Campamentos mineros',
-        'Transporte de producción al puerto',
-        'Provisión de energía para operación minera'
-      ],
-      companies: 'Ganfeng Lithium (China), America Lithium, JEMSE (Jujuy)'
-    },
-    {
-      id: 16, sector: 'mining',
-      icon: '🟤',
-      bg: 'linear-gradient(135deg, #c36039, #a04e2e)',
-      name: 'Proyecto San Jorge (PSJ)',
-      company: 'Zonda Metals GmbH, Alberdi Energy',
-      amount: 'US$891 M',
-      location: 'Uspallata, Mendoza',
-      status: 'Aprobado (Mayo 2026)',
-      description: 'Megaproyecto minero de cobre ubicado en Uspallata, Mendoza. Es el proyecto más reciente aprobado por el Gobierno (14 de mayo de 2026). Pertenece a la firma suiza Zonda Metals GmbH y la nacional Alberdi Energy.',
-      timeline: '2026-2030: Construcción y producción.',
-      impact: 'Producción de cobre de alta ley. Primera gran mina de cobre en Mendoza. Empleo directo en la zona de Uspallata. Exportaciones estratégicas.',
-      opportunities: [
-        'Ingeniería de mina y planta concentradora',
-        'Equipos de chancado primario',
-        'Caminos de acceso y obra civil',
-        'Instalaciones eléctricas y subestaciones',
-        'Logística de equipos pesados',
-        'Gestión de recursos hídricos',
-        'Servicios de hotelería y alimentación para personal'
-      ],
-      companies: 'Zonda Metals GmbH (Suiza), Alberdi Energy (Argentina)'
-    }
-  ];
-
-  const sectorColors = {
-    energy: '#f4a832',
-    oilgas: '#c36039',
-    mining: '#58c6D0',
-    infrastructure: '#F48630'
-  };
-
-  const sectorLabels = {
-    energy: 'Energía',
-    oilgas: 'Oil & Gas',
-    mining: 'Minería',
-    infrastructure: 'Infraestructura'
-  };
-
-  const projectList = document.getElementById('projectList');
-  let currentFilter = 'all';
-
-  function renderProjects(filter) {
-    const filtered = filter === 'all' ? projects : projects.filter(p => p.sector === filter);
-    projectList.innerHTML = filtered.map(p => `
-      <div class="project-card" data-sector="${p.sector}">
-        <div class="project-header" onclick="toggleProject(this)">
-          <div class="project-icon" style="background: ${p.bg}">${p.icon}</div>
-          <div class="project-info">
-            <h3>${p.name}</h3>
-            <div class="meta">
-              <span class="tag ${p.sector}">${sectorLabels[p.sector]}</span>
-              ${p.location}
-            </div>
-          </div>
-          <div class="project-amount">${p.amount}</div>
-          <div class="project-arrow">▼</div>
+  <section class="block" id="sectors">
+    <div class="container">
+      <div class="block-head">
+        <div>
+          <div class="section-label">Sectores</div>
+          <h2 class="section-title">Cómo se distribuye la inversión</h2>
         </div>
-        <div class="project-body">
-          <div class="project-details">
-            <div class="detail-section">
-              <h4>📋 Descripción</h4>
-              <p>${p.description}</p>
-              <br>
-              <h4>🏢 Empresas</h4>
-              <p>${p.companies}</p>
-            </div>
-            <div class="detail-section">
-              <h4>📅 Timeline</h4>
-              <p>${p.timeline}</p>
-              <br>
-              <h4>🎯 Impacto esperado</h4>
-              <p>${p.impact}</p>
-            </div>
-            <div class="detail-section" style="grid-column: 1 / -1;">
-              <h4>💼 Oportunidades de negocio</h4>
-              <ul>
-                ${p.opportunities.map(o => `<li>${o}</li>`).join('')}
-              </ul>
-            </div>
+        <div class="seg" role="tablist" aria-label="Métrica del gráfico">
+          <button class="seg-btn active" data-metric="amount" role="tab" aria-selected="true">Por inversión</button>
+          <button class="seg-btn" data-metric="count" role="tab" aria-selected="false">Por cantidad</button>
+        </div>
+      </div>
+
+      <div class="grid-2">
+        <div class="panel">
+          <div class="panel-head">
+            <span class="panel-title">Inversión por sector</span>
+            <span class="panel-meta" id="sectorTotal">—</span>
+          </div>
+          <div id="sectorBars" class="bars"></div>
+        </div>
+
+        <div class="panel">
+          <div class="panel-head">
+            <span class="panel-title">Estado de los proyectos</span>
+            <span class="panel-meta">16 proyectos</span>
+          </div>
+          <div class="donut-wrap">
+            <svg id="statusDonut" viewBox="0 0 160 160" class="donut" aria-label="Distribución por estado"></svg>
+            <ul id="statusLegend" class="legend"></ul>
           </div>
         </div>
       </div>
-    `).join('');
-  }
+    </div>
+  </section>
 
-  function toggleProject(header) {
-    header.parentElement.classList.toggle('open');
-  }
+  <section class="block alt" id="provinces">
+    <div class="container">
+      <div class="section-label">Geografía</div>
+      <h2 class="section-title">Mapa de la inversión</h2>
+      <p class="section-desc">Los proyectos RIGI se concentran en el Noroeste (litio), Cuyo (cobre y oro), Patagonia (petróleo, gas y GNL) y la zona industrial bonaerense.</p>
 
-  // Filter buttons
-  document.querySelectorAll('.filter-btn').forEach(btn => {
-    btn.addEventListener('click', function() {
-      document.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
-      this.classList.add('active');
-      currentFilter = this.dataset.filter;
-      renderProjects(currentFilter);
-    });
-  });
+      <div class="grid-2 align-start">
+        <div class="panel">
+          <div class="panel-head">
+            <span class="panel-title">Provincias</span>
+            <span class="panel-meta">Ordenado por inversión</span>
+          </div>
+          <table class="data-table" id="provinceTable">
+            <thead>
+              <tr>
+                <th>Provincia</th>
+                <th class="hide-sm">Región</th>
+                <th class="num">Proy.</th>
+                <th class="num">Inversión</th>
+                <th class="share-col hide-sm">Participación</th>
+              </tr>
+            </thead>
+            <tbody></tbody>
+          </table>
+        </div>
 
-  renderProjects('all');
-</script>
+        <div class="panel">
+          <div class="panel-head">
+            <span class="panel-title">Argentina · burbujas = inversión</span>
+            <span class="panel-meta">Hover para ver detalle</span>
+          </div>
+          <div class="map-wrap">
+            <svg id="arMap" viewBox="0 0 320 540" class="ar-map" role="img" aria-label="Mapa de Argentina con proyectos RIGI"></svg>
+            <div class="map-tip" id="mapTip" aria-hidden="true"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="block" id="projects">
+    <div class="container">
+      <div class="section-label">Proyectos</div>
+      <h2 class="section-title">Los 16 proyectos aprobados</h2>
+      <p class="section-desc">Hacé clic en cada fila para ver descripción, empresas, timeline, impacto y oportunidades de negocio.</p>
+
+      <div class="toolbar">
+        <div class="filter-pills" id="filterBar" role="tablist" aria-label="Filtrar por sector">
+          <button class="pill active" data-filter="all" role="tab" aria-selected="true">Todos <span class="pill-count" data-count-for="all">16</span></button>
+          <button class="pill" data-filter="oilgas" role="tab" aria-selected="false"><span class="dot dot-oilgas"></span>Oil &amp; Gas <span class="pill-count" data-count-for="oilgas">3</span></button>
+          <button class="pill" data-filter="mining" role="tab" aria-selected="false"><span class="dot dot-mining"></span>Minería <span class="pill-count" data-count-for="mining">9</span></button>
+          <button class="pill" data-filter="energy" role="tab" aria-selected="false"><span class="dot dot-energy"></span>Energía <span class="pill-count" data-count-for="energy">2</span></button>
+          <button class="pill" data-filter="infrastructure" role="tab" aria-selected="false"><span class="dot dot-infrastructure"></span>Infraestructura <span class="pill-count" data-count-for="infrastructure">2</span></button>
+        </div>
+        <div class="search">
+          <input type="search" id="projectSearch" placeholder="Buscar proyecto, empresa o provincia…" aria-label="Buscar proyecto">
+        </div>
+      </div>
+
+      <div class="table-wrap">
+        <table class="data-table projects-table" id="projectsTable">
+          <thead>
+            <tr>
+              <th class="col-num" data-sort="id">#</th>
+              <th data-sort="name">Proyecto</th>
+              <th class="hide-sm" data-sort="company">Empresa</th>
+              <th data-sort="sector">Sector</th>
+              <th class="hide-sm" data-sort="province">Provincia</th>
+              <th class="num" data-sort="amount">Inversión</th>
+              <th class="hide-md" data-sort="status">Estado</th>
+              <th class="col-arrow"></th>
+            </tr>
+          </thead>
+          <tbody id="projectList"></tbody>
+        </table>
+        <div class="empty" id="emptyState" hidden>
+          Sin resultados para los filtros aplicados.
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="block alt" id="timeline">
+    <div class="container">
+      <div class="section-label">Timeline</div>
+      <h2 class="section-title">Hitos del RIGI</h2>
+      <p class="section-desc">Desde la sanción de la Ley de Bases hasta el último proyecto aprobado.</p>
+
+      <ol class="timeline">
+        <li>
+          <span class="t-date">Jul 2024</span>
+          <div>
+            <h4>Ley de Bases &middot; RIGI creado</h4>
+            <p>Se promulga la Ley 27.742 que crea el Régimen de Incentivo para Grandes Inversiones, con un piso de US$200 M por proyecto.</p>
+          </div>
+        </li>
+        <li>
+          <span class="t-date">Oct 2024</span>
+          <div>
+            <h4>Reglamentación</h4>
+            <p>El Ejecutivo reglamenta el régimen y se habilita la presentación de proyectos. Llegan las primeras solicitudes.</p>
+          </div>
+        </li>
+        <li>
+          <span class="t-date">Dic 2024</span>
+          <div>
+            <h4>Primer proyecto aprobado e inaugurado</h4>
+            <p>Parque Solar YPF Luz (Mendoza) se convierte en el primer RIGI aprobado y operativo, con 100 MW iniciales.</p>
+          </div>
+        </li>
+        <li>
+          <span class="t-date">Feb 2025</span>
+          <div>
+            <h4>VMOS, GNL, Río Tinto y Sidersa</h4>
+            <p>Aprobaciones clave: Vaca Muerta Oleoducto Sur, GNL PAE-Golar, Río Tinto Litio y la planta siderúrgica Sidersa.</p>
+          </div>
+        </li>
+        <li>
+          <span class="t-date">Fin 2025</span>
+          <div>
+            <h4>Mineros y energéticos</h4>
+            <p>Los Azules, Gualcamayo, Veladero, Diablillos, Fénix, Gasoducto Perito Moreno, Cauchari-Olaroz y Parque Eólico Olavarría.</p>
+          </div>
+        </li>
+        <li class="now">
+          <span class="t-date">May 2026</span>
+          <div>
+            <h4>San Jorge &middot; el RIGI llega a 16</h4>
+            <p>Cobre en Uspallata, Mendoza, por US$891 M. Acumulado: US$21.000 M. Otros 22 proyectos en análisis.</p>
+          </div>
+        </li>
+        <li>
+          <span class="t-date">Fin 2026</span>
+          <div>
+            <h4>Primeras operaciones &middot; VMOS</h4>
+            <p>Se proyecta la puesta en marcha del Oleoducto Sur, ampliando la capacidad exportadora petrolera del país.</p>
+          </div>
+        </li>
+        <li>
+          <span class="t-date">2027+</span>
+          <div>
+            <h4>GNL, litio y cobre</h4>
+            <p>Southern Energy inicia licuefacción. Litio y cobre entran en producción escalonada. Se sumarán nuevos proyectos del "Súper RIGI".</p>
+          </div>
+        </li>
+      </ol>
+    </div>
+  </section>
+
+  <section class="block" id="opportunities">
+    <div class="container">
+      <div class="section-label">Oportunidades</div>
+      <h2 class="section-title">Qué negocios se abren</h2>
+      <p class="section-desc">Cada proyecto RIGI desencadena una cadena de demanda para proveedores, servicios, tecnología e infraestructura asociada.</p>
+
+      <div class="opp-grid">
+        <article class="opp">
+          <h3>Ingeniería y construcción</h3>
+          <p>Obra civil, montaje electromecánico, tuberías y plantas de proceso. Demanda masiva para oleoductos, GNL, parques solares y minas.</p>
+        </article>
+        <article class="opp">
+          <h3>Tecnología y automatización</h3>
+          <p>SCADA, IoT, sensores, gemelos digitales y automatización industrial. Espacio fértil para startups de IA aplicada e industria 4.0.</p>
+        </article>
+        <article class="opp">
+          <h3>Logística y transporte</h3>
+          <p>Equipos pesados, insumos y personal. Logística puerto-interior para exportaciones mineras y energéticas. Infraestructura ferroviaria y portuaria.</p>
+        </article>
+        <article class="opp">
+          <h3>Energía y servicios auxiliares</h3>
+          <p>Generación distribuida para operaciones mineras, eficiencia energética, combustibles y lubricantes para flotas y maquinaria.</p>
+        </article>
+        <article class="opp">
+          <h3>Ambiental y laboratorio</h3>
+          <p>Monitoreo ambiental, ensayos de materiales, análisis químico (litio, cobre), consultoría en sustentabilidad y compliance RIGI.</p>
+        </article>
+        <article class="opp">
+          <h3>Servicios a comunidades</h3>
+          <p>Hotelería, campamentos, alimentación, salud ocupacional y transporte de personal en regiones alejadas.</p>
+        </article>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<footer class="site-footer">
+  <div class="container footer-inner">
+    <div class="foot-meta">
+      <span>© 2026 RIGI Tracker</span>
+      <span class="sep">·</span>
+      <span>Fuentes: Boletín Oficial, TN, Infobae, Ámbito</span>
+      <span class="sep">·</span>
+      <span>Actualizado mayo 2026</span>
+    </div>
+    <div class="foot-cred">
+      por <a href="https://x.com/nanopisaroni" target="_blank" rel="noopener">@nanopisaroni</a>
+      <span class="sep">·</span>
+      contribs <a href="https://x.com/t0t0_build" target="_blank" rel="noopener">@t0t0_build</a>
+    </div>
+  </div>
+</footer>
+
+<script src="data.js"></script>
+<script src="app.js"></script>
 </body>
 </html>
