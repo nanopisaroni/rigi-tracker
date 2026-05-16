@@ -1118,6 +1118,131 @@ button { font-family: inherit; cursor: pointer; }
   line-height: 1.6;
 }
 
+
+/* ===== Pending Projects (anunciados) ===== */
+.pending-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 16px;
+}
+
+.pending-card {
+  background: var(--bg);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 20px;
+  transition: border-color 0.15s;
+}
+
+.pending-card:hover {
+  border-color: var(--border-strong);
+}
+
+.pending-head {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  margin-bottom: 12px;
+  gap: 12px;
+}
+
+.pending-tags {
+  display: flex;
+  gap: 6px;
+  flex-wrap: wrap;
+}
+
+.pending-amount {
+  font-family: var(--mono);
+  font-size: 15px;
+  font-weight: 600;
+  color: var(--blue);
+  white-space: nowrap;
+}
+
+.pending-name {
+  font-size: 17px;
+  font-weight: 600;
+  letter-spacing: -0.01em;
+  color: var(--text);
+  margin-bottom: 2px;
+}
+
+.pending-company {
+  font-size: 12.5px;
+  color: var(--text-2);
+  margin-bottom: 10px;
+}
+
+.pending-desc {
+  font-size: 12.5px;
+  color: var(--text-2);
+  line-height: 1.6;
+  margin-bottom: 14px;
+}
+
+.pending-stats {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 6px 16px;
+  margin-bottom: 14px;
+}
+
+.pending-stats dt {
+  font-size: 10.5px;
+  font-weight: 600;
+  color: var(--text-3);
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+}
+
+.pending-stats dd {
+  font-size: 13px;
+  color: var(--text);
+  font-weight: 500;
+}
+
+.pending-opps h4 {
+  font-size: 11px;
+  font-weight: 600;
+  color: var(--text-3);
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  margin-bottom: 6px;
+}
+
+.pending-opps ul {
+  list-style: none;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 4px 8px;
+}
+
+.pending-opps li {
+  font-size: 11.5px;
+  color: var(--text-2);
+  background: var(--surface);
+  padding: 3px 8px;
+  border-radius: 4px;
+  line-height: 1.4;
+}
+
+.pending-opps li.more {
+  color: var(--text-3);
+  font-style: italic;
+  background: transparent;
+}
+
+@media (max-width: 768px) {
+  .pending-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .pending-head {
+    flex-direction: column;
+  }
+}
+
 /* ===== Footer ===== */
 .site-footer {
   border-top: 1px solid var(--border);

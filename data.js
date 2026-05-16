@@ -15,7 +15,8 @@ window.RIGI = {
     desarrollo:   { label: 'En desarrollo',   color: '#ca8a04' },
     ampliacion:   { label: 'En ampliación',   color: '#4f46e5' },
     exploracion:  { label: 'En exploración',  color: '#9333ea' },
-    aprobado:     { label: 'Aprobado',        color: '#6b7280' }
+    aprobado:     { label: 'Aprobado',        color: '#6b7280' },
+    anunciado:    { label: 'Anunciado',       color: '#8b5cf6' }
   },
 
   // Province centroids on a 320x540 SVG of Argentina.
@@ -441,6 +442,66 @@ window.RIGI = {
         'Hotelería y alimentación de personal'
       ],
       companies: 'Zonda Metals GmbH (Suiza), Alberdi Energy (Argentina)'
+    }
+  ]
+}
+
+  pendingProjects: [
+    {
+      id: 'A', sector: 'oilgas', status: 'anunciado',
+      name: 'LLL Oil',
+      company: 'YPF',
+      province: 'Neuquén',
+      amount: 25000,
+      location: 'Vaca Muerta, Neuquén',
+      announcementDate: '2026-05-15',
+      decisionDate: '2026–2027',
+      directJobs: 6000,
+      annualExportsUSDm: 6000,
+      companyCountry: 'AR',
+      ticker: 'YPF', tickerExchange: 'NYSE', tickerName: 'YPF S.A.',
+      description: 'Megaproyecto de exportación de petróleo presentado al RIGI por YPF en mayo de 2026. 1.152 pozos en 15 años con una inversión de US$25.000 M. Producción de 240.000 barriles diarios a partir de 2032. El 100% del crudo se exportará por VMOS.',
+      timeline: '2026: presentación al RIGI · 2032: plateau de 240.000 bbl/d · 15 años de inversión',
+      impact: 'US$100.000 M+ en exportaciones durante la vida del proyecto. 6.000 empleos directos. Consolidación de Vaca Muerta como hub exportador.',
+      opportunities: [
+        'Perforación y completación de pozos',
+        'Fractura hidráulica y sets de pressure pumping',
+        'Logística de arena, agua y equipos',
+        'Ingeniería de superficie y ductos',
+        'Campamentos y servicios para 6.000 trabajadores',
+        'Mantenimiento de equipos de perforación',
+        'Monitoreo digital y automatización',
+        'Transporte de crudo y logística portuaria'
+      ],
+      companies: 'YPF S.A. (Argentina)'
+    },
+    {
+      id: 'B', sector: 'oilgas', status: 'anunciado',
+      name: 'Argentina GNL',
+      company: 'YPF + ENI + XRG',
+      province: 'Río Negro',
+      amount: 30000,
+      location: 'Golfo San Matías, Río Negro',
+      announcementDate: '2026-01',
+      decisionDate: '2S 2026 (FID)',
+      directJobs: 40000,
+      annualExportsUSDm: null,
+      companyCountry: 'AR',
+      ticker: 'YPF', tickerExchange: 'NYSE', tickerName: 'YPF S.A.',
+      description: 'Megaproyecto de gas natural licuado con ENI (Italia) y XRG (EAU). Dos unidades flotantes de licuefacción con capacidad conjunta de 12 millones de tn/año. Inversión total de US$30.000 M: US$20.000 M en infraestructura + US$10.000 M en pozos.',
+      timeline: '2025–2026: acuerdo y estructuración · 2S 2026: decisión final de inversión · 2030: inicio de exportaciones',
+      impact: 'Hasta 50.000 empleos. Argentina como exportador de GNL. Integración con Vaca Muerta.',
+      opportunities: [
+        'Ingeniería criogénica y plantas de licuefacción',
+        'Buques metaneros y logística portuaria',
+        'Compresión y tratamiento de gas',
+        'Cañerías de interconexión',
+        'Servicios de inspección y certificación',
+        'Construcción naval y mantenimiento',
+        'Provisión de energía para las operaciones',
+        'Hotelería y servicios para 40.000 trabajadores'
+      ],
+      companies: 'YPF (Argentina), ENI (Italia), XRG (Emiratos Árabes Unidos)'
     }
   ]
 };

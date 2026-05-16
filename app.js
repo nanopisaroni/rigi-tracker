@@ -832,6 +832,62 @@
     `;
   }
 
+
+  // ===== Pending projects =====
+  function renderPendingProjects() {
+    const list = document.getElementById('pendingList');
+    if (!list) return;
+    const pending = data.pendingProjects;
+    if (!pending || !pending.length) {
+      list.innerHTML = '<p class="muted">Sin proyectos anunciados por el momento.</p>';
+      return;
+    }
+
+    list.innerHTML = pending.map(p => {
+      const statusInfo = data.statuses[p.status];
+      const country = p.companyCountry ? (COUNTRY_LABELS[p.companyCountry] || p.companyCountry) : null;
+      const jobs = p.directJobs ? p.directJobs.toLocaleString('es-AR') : null;
+      const exports = p.annualExportsUSDm ? `US$${p.annualExportsUSDm.toLocaleString('es-AR')} M/año` : null;
+      const totalExportsLife = p.id === 'A' ? 'US$100.000 M+' : null;
+
+      return `
+        <article class="pending-card">
+          <div class="pending-head">
+            <div class="pending-tags">
+              <span class="tag ${p.sector}"><span class="dot dot-${p.sector}"></span>${data.sectors[p.sector].label}</span>
+              <span class="status ${p.status}"><span class="sdot"></span>${statusInfo.label}</span>
+            </div>
+            <div class="pending-amount">${fmtUSD(p.amount)}</div>
+          </div>
+          <h3 class="pending-name">${escapeHtml(p.name)}</h3>
+          <p class="pending-company">${escapeHtml(p.company)}</p>
+          <p class="pending-desc">${escapeHtml(p.description)}</p>
+          <dl class="pending-stats">
+            <div>
+              <dt>Ubicación</dt>
+              <dd>${escapeHtml(p.location)}</dd>
+            </div>
+            ${jobs ? `<div><dt>Empleos</dt><dd>${jobs} directos</dd></div>` : ''}
+            ${exports ? `<div><dt>Exportaciones</dt><dd>${exports}</dd></div>` : ''}
+            ${totalExportsLife ? `<div><dt>Export. totales</dt><dd>${totalExportsLife}</dd></div>` : ''}
+            <div>
+              <dt>Decisión esperada</dt>
+              <dd>${escapeHtml(p.decisionDate || 'Por definir')}</dd>
+            </div>
+          </dl>
+          <div class="pending-opps">
+            <h4>Oportunidades</h4>
+            <ul>
+              ${p.opportunities.slice(0, 5).map(o => `<li>${escapeHtml(o)}</li>`).join('')}
+              ${p.opportunities.length > 5 ? `<li class="more">+${p.opportunities.length - 5} más</li>` : ''}
+            </ul>
+          </div>
+        </article>
+      `;
+    }).join('');
+  }
+
+
   // Bootstrap
   renderApprovalTimeline();
   renderSectorBars();
@@ -839,4 +895,5 @@
   renderProvinceTable();
   renderMap();
   renderProjects();
+  renderPendingProjects();
 })();
