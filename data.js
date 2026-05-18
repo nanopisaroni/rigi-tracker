@@ -443,7 +443,7 @@ window.RIGI = {
       ],
       companies: 'Zonda Metals GmbH (Suiza), Alberdi Energy (Argentina)'
     }
-  ]
+  ],
 
   pendingProjects: [
     {
