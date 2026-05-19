@@ -1243,6 +1243,83 @@ button { font-family: inherit; cursor: pointer; }
   }
 }
 
+/* ===== RIMI Section ===== */
+.rimi-table {
+  padding: 16px;
+}
+.rimi-table dl {
+  display: grid;
+  grid-template-columns: auto 1fr;
+  column-gap: 12px;
+  row-gap: 8px;
+}
+.rimi-table dt {
+  font-size: 11px;
+  font-weight: 600;
+  color: var(--text-3);
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+}
+.rimi-table dd {
+  font-size: 13px;
+  color: var(--text);
+  font-weight: 500;
+}
+.section-title.sm {
+  font-size: 15px;
+  margin-bottom: 20px;
+}
+.rimi-links {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 12px;
+}
+.rimi-link-card {
+  display: flex;
+  flex-direction: column;
+  gap: 3px;
+  background: var(--bg);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 16px;
+  transition: border-color .15s, box-shadow .15s;
+  text-decoration: none;
+}
+.rimi-link-card:hover {
+  border-color: var(--border-strong);
+  box-shadow: 0 1px 4px rgba(0,0,0,0.04);
+}
+.rimi-link-source {
+  font-size: 10px;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: var(--blue);
+}
+.rimi-link-title {
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--text);
+  line-height: 1.4;
+}
+.rimi-link-desc {
+  font-size: 12px;
+  color: var(--text-2);
+  line-height: 1.5;
+}
+.rimi-link-meta {
+  font-size: 11px;
+  color: var(--text-3);
+  margin-top: auto;
+  padding-top: 6px;
+}
+
+@media (max-width: 768px) {
+  .rimi-links {
+    grid-template-columns: 1fr;
+  }
+}
+
 /* ===== Footer ===== */
 .site-footer {
   border-top: 1px solid var(--border);
