@@ -1459,3 +1459,10 @@ button { font-family: inherit; cursor: pointer; }
 @media (min-width: 769px) {
   .topnav { display: flex !important; }
 }
+
+/* Regime pills */
+.regime-nav { display: flex; gap: 4px; margin-left: 12px; }
+.regime-pill { font-size: 11px; padding: 4px 12px; border-radius: 20px; border: 1px solid #e0e0e0; background: transparent; color: #666; text-decoration: none; font-weight: 500; transition: all .15s; white-space: nowrap; }
+.regime-pill:hover { border-color: #2563eb; color: #2563eb; }
+.regime-pill.active { background: #2563eb; color: #fff; border-color: #2563eb; }
+@media (max-width: 768px) { .regime-nav { margin: 8px 0 0; flex-wrap: wrap; } .regime-pill { font-size: 10px; padding: 3px 10px; } }
