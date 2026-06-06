@@ -442,6 +442,60 @@ window.RIGI = {
         'Hotelería y alimentación de personal'
       ],
       companies: 'Zonda Metals GmbH (Suiza), Alberdi Energy (Argentina)'
+    },
+    {
+      id: 17, sector: 'oilgas', status: 'aprobado',
+      name: 'Gasoducto San Matías',
+      company: 'Southern Energy (PAE + YPF + Pampa + Harbour + Golar LNG)',
+      province: 'Río Negro',
+      amount: 1300,
+      location: 'Trayecto Neuquén → Golfo San Matías, Río Negro',
+      approvalDate: '2026-06-04',
+      operationalDate: '2027',
+      directJobs: 2489,
+      annualExportsUSDm: null,
+      companyCountry: 'BM',
+      ticker: null, tickerExchange: null, tickerName: null,
+      description: 'Gasoducto de 27 MM m³/d desde Neuquén hasta el Golfo San Matías para alimentar la plataforma de GNL de Southern Energy. Primera etapa del megaproyecto de exportación de GNL que incluye el buque licuador Hilli Episeyo.',
+      timeline: '2026: aprobación RIGI · 2027: tendido y puesta en marcha',
+      impact: '27 MM m³/d de capacidad de transporte. Habilita la primera plataforma exportadora de GNL de Argentina. 2.489 empleos directos e indirectos.',
+      opportunities: [
+        'Tendido de cañerías de gran diámetro',
+        'Estaciones de compresión',
+        'Ingeniería de gasoductos',
+        'Soldadura especializada',
+        'Válvulas y sistemas de control',
+        'Estudios de impacto ambiental',
+        'Campamentos y logística de obra'
+      ],
+      companies: 'Southern Energy (joint venture: PAE, YPF, Pampa Energía, Harbour Energy, Golar LNG)'
+    },
+    {
+      id: 18, sector: 'mining', status: 'aprobado',
+      name: 'Sal de Oro (Segunda Etapa)',
+      company: 'Posco Argentina',
+      province: 'Salta',
+      amount: 208,
+      location: 'Salar del Hombre Muerto, Salta y Catamarca',
+      approvalDate: '2026-06-04',
+      operationalDate: '2027–2028',
+      directJobs: 2335,
+      annualExportsUSDm: 300,
+      companyCountry: 'KR',
+      ticker: '005490', tickerExchange: 'KRX', tickerName: 'POSCO Holdings Inc.',
+      description: 'Segunda etapa del proyecto de litio Sal de Oro de la surcoreana Posco. Planta de carbonato de litio de 23.000 tn/año. Sumado a la primera etapa (hidróxido de litio, 25.000 tn/año), alcanzará 50.000 tn/año combinadas desde 2026.',
+      timeline: '2026: aprobación RIGI · 2027–2028: construcción y puesta en marcha',
+      impact: '23.000 tn/año adicionales de carbonato de litio. Exportaciones por +US$300 M/año. 2.335 empleos. Posicionamiento de Argentina como hub global de litio.',
+      opportunities: [
+        'Planta de carbonato de litio',
+        'Evaporación y cristalización',
+        'Laboratorios de control de calidad',
+        'Piletas de evaporación',
+        'Mantenimiento industrial',
+        'Logística a puerto',
+        'Provisión de energía para la Puna'
+      ],
+      companies: 'Posco Argentina (subsidiaria de POSCO Holdings, Corea del Sur)'
     }
   ],
 
