@@ -35,6 +35,7 @@
   --c-mining: #2563eb;
   --c-energy: #059669;
   --c-infrastructure: #d97706;
+  --c-siderurgia: #dc2626;
 
   /* Status palette */
   --s-operativo: #16a34a;
@@ -482,6 +483,7 @@ button { font-family: inherit; cursor: pointer; }
 .dot-mining { background: var(--c-mining); }
 .dot-energy { background: var(--c-energy); }
 .dot-infrastructure { background: var(--c-infrastructure); }
+.dot-siderurgia { background: var(--c-siderurgia); }
 
 /* ===== Donut ===== */
 .donut-wrap {
@@ -796,6 +798,7 @@ button { font-family: inherit; cursor: pointer; }
 .tag.mining { background: var(--blue-100); color: var(--blue-hover); }
 .tag.energy { background: rgba(5,150,105,0.10); color: var(--c-energy); }
 .tag.infrastructure { background: rgba(217,119,6,0.10); color: var(--c-infrastructure); }
+.tag.siderurgia { background: rgba(220,38,38,0.10); color: var(--c-siderurgia); }
 
 .status {
   display: inline-flex;

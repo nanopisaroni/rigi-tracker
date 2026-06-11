@@ -1,5 +1,5 @@
 // RIGI Tracker — data layer
-// Sources: Boletín Oficial (resoluciones ME), Casa Rosada, Infobae, Ámbito, La Nación, Cronista. Update: May 2026.
+// Sources: Ministerio de Economía sheet oficial (Google Sheets API), Boletín Oficial, Infobae. Auto-sync cada 72h.
 
 window.RIGI = {
   sectors: {
