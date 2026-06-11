@@ -322,6 +322,8 @@
     const mult = dir === 'asc' ? 1 : -1;
     return [...arr].sort((a, b) => {
       const A = a[key], B = b[key];
+      if (A === null || A === undefined) return 1;
+      if (B === null || B === undefined) return -1;
       if (typeof A === 'number') return (A - B) * mult;
       return String(A).localeCompare(String(B), 'es') * mult;
     });
@@ -357,6 +359,7 @@
         <td><span class="tag ${p.sector}"><span class="dot dot-${p.sector}"></span>${data.sectors[p.sector].label}</span></td>
         <td class="hide-sm">${escapeHtml(p.province)}</td>
         <td class="num proj-amount">${fmtUSDshort(p.amount)}</td>
+        <td class="num hide-sm">${p.directJobs ? p.directJobs.toLocaleString('es-AR') : '—'}</td>
         <td class="hide-md"><span class="status ${p.status}"><span class="sdot"></span>${statusInfo.label}</span></td>
         <td class="col-arrow"><span class="arrow"></span></td>
       </tr>
@@ -370,7 +373,7 @@
     const exports = p.annualExportsUSDm ? `US$${p.annualExportsUSDm} M/año` : null;
     return `
       <tr class="detail-row">
-        <td colspan="8">
+        <td colspan="9">
           <div class="detail">
             <div>
               <h4>Descripción</h4>
@@ -381,7 +384,7 @@
                 <dt>Ubicación</dt><dd>${escapeHtml(p.location)}</dd>
                 <dt>Estado</dt><dd><span class="status ${p.status}"><span class="sdot"></span>${data.statuses[p.status].label}</span></dd>
                 <dt>Inversión</dt><dd>${fmtUSD(p.amount)}</dd>
-                ${jobs ? `<dt>Empleos</dt><dd>${jobs} directos</dd>` : ''}
+                ${jobs ? `<dt>Empleos</dt><dd>${jobs} proyectados</dd>` : ''}
                 ${exports ? `<dt>Exportaciones</dt><dd>${exports}</dd>` : ''}
               </dl>
             </div>

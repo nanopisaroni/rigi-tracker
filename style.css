@@ -141,7 +141,14 @@ button { font-family: inherit; cursor: pointer; }
   transition: transform .2s, opacity .2s;
 }
 
-/* ===== Hero ===== */
+/* Empleos column */
+.projects-table th[data-sort="directJobs"],
+.projects-table td.num.hide-sm {
+  min-width: 80px;
+  width: 90px;
+}
+
+/* ===== Detail row ===== */
 .hero {
   padding: 56px 0 40px;
   border-bottom: 1px solid var(--border-soft);
