@@ -498,6 +498,34 @@ window.RIGI = {
         'Provisión de energía para la Puna'
       ],
       companies: 'Posco Argentina (subsidiaria de POSCO Holdings, Corea del Sur)'
+    },
+    {
+      id: 19, sector: 'mining', status: 'aprobado',
+      name: 'Vicuña',
+      company: 'BHP y Lundin Mining',
+      province: 'San Juan',
+      amount: 9700,
+      location: 'San Juan (límite con Chile)',
+      approvalDate: '2026-06-16',
+      operationalDate: null,
+      directJobs: 30000,
+      annualExportsUSDm: 2600,
+      companyCountry: 'AU',
+      ticker: 'BHP', tickerExchange: 'NYSE', tickerName: 'BHP Group Limited',
+      description: 'El proyecto de cobre más grande de la historia argentina, aprobado por el comité evaluador del RIGI. Desarrollado por BHP (Australia/Reino Unido) y Lundin Mining (Canadá) en la cordillera de San Juan. Inversión inicial de US$9.700 M con potencial de alcanzar US$18.000 M según estimaciones de las compañías. Es uno de los cinco proyectos de cobre más grandes del mundo.',
+      timeline: '2026-06-16: aprobado por comité evaluador RIGI',
+      impact: 'Mayor proyecto minero de la historia argentina. US$2.600 M/año en exportaciones. +30.000 empleos directos e indirectos. San Juan como hub cuprífero global.',
+      opportunities: [
+        'Ingeniería de mina y planta concentradora',
+        'Chancado y molienda de cobre',
+        'Caminos de alta montaña e infraestructura vial',
+        'Campamentos y logística en cordillera',
+        'Sistemas de bombeo y manejo de agua',
+        'Líneas de transmisión eléctrica',
+        'Flotación y procesamiento de cobre',
+        'Gestión ambiental y relaves'
+      ],
+      companies: 'BHP Group (Australia/Reino Unido), Lundin Mining (Canadá)'
     }
   ],
 
