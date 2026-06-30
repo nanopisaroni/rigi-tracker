@@ -526,6 +526,34 @@ window.RIGI = {
         'Gestión ambiental y relaves'
       ],
       companies: 'BHP Group (Australia/Reino Unido), Lundin Mining (Canadá)'
+    },
+    {
+      id: 20, sector: 'oilgas', status: 'aprobado',
+      name: 'Rincón de Aranda',
+      company: 'Pampa Energía',
+      province: 'Neuquén',
+      amount: 4500,
+      location: 'Vaca Muerta, Neuquén',
+      approvalDate: '2026-06-30',
+      operationalDate: null,
+      directJobs: 1800,
+      annualExportsUSDm: 567,
+      companyCountry: 'AR',
+      ticker: 'PAMP', tickerExchange: 'BYMA', tickerName: 'Pampa Energía S.A.',
+      description: 'Desarrollo upstream integral del yacimiento Rincón de Aranda en Vaca Muerta, Neuquén. Perforación de más de 100 pozos adicionales para la producción de 305 millones de barriles de petróleo durante 30 años. Incluye construcción de planta central de tratamiento (CPF), oleoductos y gasoductos de conexión con sistemas troncales (Gasoducto Perito Moreno, Oleoducto Vaca Muerta Sur). El RIGI permitió a Pampa Energía incrementar 50% la actividad de explotación inicialmente planeada. Producción estimada de 45.000 bbl/d en plateau hacia 2027.',
+      timeline: '2023: adquisición del área de TotalEnergies · 2025-07: solicitud RIGI infraestructura (US$426 M) · 2026-03: solicitud upstream RIGI · 2026-06-30: aprobado por comité evaluador RIGI',
+      impact: 'US$17.000 M en exportaciones durante 30 años. 305 millones de barriles de petróleo. 1.800 empleos directos e indirectos. Desarrollo integral de Vaca Muerta.',
+      opportunities: [
+        'Perforación y completación de pozos shale',
+        'Fractura hidráulica y pressure pumping',
+        'Planta central de tratamiento (CPF)',
+        'Cañerías y oleoductos de alta presión',
+        'Estaciones de bombeo y almacenamiento',
+        'Campamentos y logística en Vaca Muerta',
+        'Monitoreo digital y automatización de producción',
+        'Servicios ambientales y gestión de residuos'
+      ],
+      companies: 'Pampa Energía S.A. (Argentina)'
     }
   ],
 
