@@ -113,15 +113,15 @@ window.RIGI = {
       companies: 'Southern Energy (joint venture PAE + Golar LNG)'
     },
     {
-      id: 4, sector: 'mining', status: 'desarrollo',
+      id: 4, sector: 'oilgas', status: 'desarrollo',
       name: 'Proyecto Rincón',
       company: 'Rincón Mining PTY LTD. Sucursal Argentina',
       province: 'Salta',
-      amount: 2744,
+      amount: 4522,
       location: 'Salar de Rincón, Salta',
       approvalDate: '2025-06-03',
       operationalDate: '2028',
-      directJobs: 1985,
+      directJobs: 1733,
       annualExportsUSDm: null,
       companyCountry: 'GB',
       ticker: 'RIO', tickerExchange: 'NYSE', tickerName: 'Rio Tinto plc',
