@@ -554,6 +554,36 @@ window.RIGI = {
         'Servicios ambientales y gestión de residuos'
       ],
       companies: 'Pampa Energía S.A. (Argentina)'
+    },
+    {
+      id: 21, sector: 'mining', status: 'aprobado',
+      name: 'Tres Quebradas (3Q)',
+      company: 'Liex S.A. Sucursal Dedicada',
+      province: 'Catamarca',
+      amount: 709,
+      location: 'Salar Tres Quebradas, Fiambalá, Catamarca',
+      approvalDate: '2026-07-03',
+      operationalDate: null,
+      directJobs: 4406,
+      annualExportsUSDm: 400,
+      companyCountry: 'CN',
+      ticker: '601899', tickerExchange: 'SSE', tickerName: 'Zijin Mining Group Co. Ltd.',
+      description: 'Primer proyecto de capital chino aprobado bajo el RIGI. La Sucursal Dedicada de Liex S.A. (subsidiaria de Zijin Mining, adquirida en 2022 vía Neo Lithium de Canadá) desarrolla la expansión del Salar Tres Quebradas, uno de los depósitos de salmuera de litio más grandes del mundo con 8,42 Mt de LCE y concentración de 768 mg/L. El proyecto contempla 40.000 tn/año de carbonato de litio grado batería, aprovechando la Fase I (20.000 tn/año) ya operativa. Resolución ME 1153/2026 (BO 29/07/2026). Incluye pozos de extracción, ductos, sistemas de purificación y obras de infraestructura.',
+      timeline: '2022: adquisición por Zijin · Fase I: ya operativa (20.000 tn/año) · 2026-07-03: aprobación RIGI · 2027-11-30: tope inversión mínima · Expansión: 40.000 tn/año total',
+      impact: 'US$709 M de inversión. 40.000 tn/año de carbonato de litio. US$400 M/año en exportaciones. 4.406 puestos de trabajo. 19+ años de vida útil. Primer proyecto chino en el RIGI. Catamarca consolida su posición en el triángulo del litio.',
+      opportunities: [
+        'Perforación y bombeo de salmueras',
+        'Plantas de adsorción y proceso químico',
+        'Sistemas de purificación y cristalización',
+        'Ductos y tuberías de transporte de salmuera',
+        'Obras de control de inundaciones',
+        'Mantenimiento de planta industrial',
+        'Logística en la Puna catamarqueña',
+        'Laboratorios de control de calidad',
+        'Campamentos e infraestructura en alta montaña',
+        'Provisión de energía para operaciones mineras'
+      ],
+      companies: 'Zijin Mining Group (China) — adquirida vía Neo Lithium Corp. (Canadá)'
     }
   ],
 
