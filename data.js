@@ -477,7 +477,7 @@ window.RIGI = {
       name: 'Sal de Oro (Segunda Etapa)',
       company: 'Posco Argentina',
       province: 'Salta',
-      amount: 208,
+      amount: 547,
       location: 'Salar del Hombre Muerto, Salta y Catamarca',
       approvalDate: '2026-06-04',
       operationalDate: '2027–2028',
