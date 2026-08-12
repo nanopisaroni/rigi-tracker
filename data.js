@@ -584,6 +584,66 @@ window.RIGI = {
         'Provisión de energía para operaciones mineras'
       ],
       companies: 'Zijin Mining Group (China) — adquirida vía Neo Lithium Corp. (Canadá)'
+    },
+    {
+      id: 22, sector: 'oilgas', status: 'aprobado',
+      name: 'Planta de Fertilizantes Bahía Blanca',
+      company: 'Pampa Energía S.A. Sucursal Dedicada',
+      province: 'Buenos Aires',
+      amount: 2700,
+      location: 'Polo petroquímico, Bahía Blanca, Buenos Aires',
+      approvalDate: '2026-07-31',
+      operationalDate: null,
+      directJobs: 3500,
+      annualExportsUSDm: 800,
+      companyCountry: 'AR',
+      ticker: 'PAMP', tickerExchange: 'BYMA', tickerName: 'Pampa Energía S.A.',
+      description: 'Planta de producción de urea granulada (2,1 millones de toneladas anuales) en el polo petroquímico de Bahía Blanca, uno de los grandes proyectos de industrialización del shale gas de Vaca Muerta. El proyecto, presentado a fines de abril de 2026 y aprobado por el Comité Evaluador el 31 de julio de 2026, generará más de 3.500 puestos de trabajo durante su etapa de construcción, prevé iniciar operaciones hacia fines de 2029 y tendrá un impacto estimado en la balanza comercial superior a US$800 millones anuales entre exportaciones y sustitución de importaciones de fertilizantes.',
+      timeline: '2026-04: presentación del proyecto · 2026-07-31: aprobación RIGI · Fines 2029: inicio de operaciones',
+      impact: 'US$2.700 M de inversión. 2,1 MTPA de urea granulada. 3.500+ empleos en construcción. >US$800 M/año en balanza comercial. Industrialización del gas de Vaca Muerta. Pampa Energía ingresa al negocio agrícola.',
+      opportunities: [
+        'Ingeniería y construcción petroquímica',
+        'Montaje electromecánico de plantas de proceso',
+        'Equipamiento de síntesis de urea (stripper, reactors)',
+        'Calderas y generación de vapor',
+        'Plantas de tratamiento de efluentes',
+        'Logística portuaria y ferroviaria de fertilizantes',
+        'Automatización y control de procesos (DCS/SCADA)',
+        'Provisión de gas natural y servicios industriales',
+        'Ensayos no destructivos y control de calidad',
+        'Servicios de operación y mantenimiento de planta'
+      ],
+      companies: 'Pampa Energía S.A. (Argentina)'
+    },
+    {
+      id: 23, sector: 'oilgas', status: 'aprobado',
+      name: 'Ampliación Compañía MEGA',
+      company: 'Compañía MEGA S.A.',
+      province: 'Buenos Aires',
+      amount: 360,
+      location: 'Bahía Blanca, Buenos Aires',
+      approvalDate: '2026-07-31',
+      operationalDate: null,
+      directJobs: 800,
+      annualExportsUSDm: 190,
+      companyCountry: 'AR',
+      ticker: null, tickerExchange: null, tickerName: null,
+      description: 'Ampliación de la capacidad de separación, transporte y fraccionamiento de líquidos del gas natural (NGLs: etano, propano, butano y gasolina natural) en Bahía Blanca, incrementando un 27% la producción de líquidos para acompañar el crecimiento de Vaca Muerta. El proyecto, aprobado por el Comité Evaluador del RIGI el 31 de julio de 2026, adiciona 1.500 toneladas por día de capacidad, prevé obras hasta fines de 2028, genera alrededor de 800 puestos de trabajo y exportará US$190 millones por año. El 80% del volumen adicional se destinará a exportación.',
+      timeline: '2026-03: presentación del proyecto · 2026-07-31: aprobación RIGI · 2026-2028: obras de ampliación',
+      impact: 'US$360 M de inversión. +27% de producción de líquidos del gas natural. 1.500 tn/día de capacidad adicional. 800 empleos. US$190 M/año en exportaciones. Refuerza la cadena de valor de Vaca Muerta.',
+      opportunities: [
+        'Ingeniería de detalle y construcción de plantas de proceso',
+        'Nuevas plantas de rebombeo en poliductos',
+        'Cañerías y equipos criogénicos',
+        'Tanques de almacenamiento de NGLs',
+        'Instrumentación y control de procesos',
+        'Montaje de módulos prefabricados',
+        'Servicios de soldadura especializada y END',
+        'Logística portuaria de líquidos',
+        'Automatización y sistemas de medición fiscal',
+        'Operación y mantenimiento de plantas'
+      ],
+      companies: 'Compañía MEGA S.A. (YPF, PAE, TotalEnergies)'
     }
   ],
 
