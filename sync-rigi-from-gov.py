@@ -22,10 +22,13 @@ SECTOR_MAP = {
 
 # Sheet project → our project ID matching (by keywords in sheet name)
 KEYWORD_MAP = [
+    (["Fertilizantes", "Urea", "Pampa Energía S.A. Sucursal Dedicada", "Planta de Fertilizantes"], 22),
+    (["MEGA", "Mega", "líquidos del gas natural"], 23),
+    (["Rincón de Aranda", "Pampa Energía"], 20),
     (["El Quemado", "Quemado", "YPF Luz"], 1),
     (["VMOS", "Vaca Muerta Oleoducto Sur", "Oleoducto Sur"], 2),
     (["Licuefacción", "FLNG", "Gas Natural", "Southern Energy"], 3),
-    (["Rincón", "Rincon Mining"], 4),
+    (["Proyecto Rincón", "Rincón", "Rincon Mining"], 4),
     (["Sidersa", "Siderúrgico"], 5),
     (["Hombre Muerto", "HMW", "Galan"], 6),
     (["Olavarría", "Eólico Olavarría"], 7),
@@ -40,6 +43,8 @@ KEYWORD_MAP = [
     (["PSJ", "Cobre Mendocino", "San Jorge", "San Jorge"], 16),
     (["San Matías", "Gasoducto San Matías"], 17),
     (["Sal de Oro", "Posco"], 18),
+    (["Vicuña"], 19),
+    (["Liex", "Sucursal Dedicada", "Tres Quebradas"], 21),
 ]
 
 def fetch_sheet(sheet_name):
