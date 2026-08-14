@@ -677,7 +677,6 @@ window.RIGI = {
       companies: 'YPF S.A. (Argentina)'
     },
     {
-          {
       id: 'B', sector: 'oilgas', status: 'anunciado',
       name: 'Argentina GNL',
       company: 'YPF + ENI + XRG',
@@ -705,7 +704,6 @@ window.RIGI = {
         'Hotelería y servicios para 40.000 trabajadores'
       ],
       companies: 'YPF (Argentina) 36%, ENI (Italia) 32%, XRG/ADNOC (Emiratos Árabes Unidos) 32%'
-    }
     }
   ]
 };
