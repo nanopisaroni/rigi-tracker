@@ -7,7 +7,8 @@ window.RIGI = {
     mining:         { label: 'Minería',         color: '#2563eb' },
     energy:         { label: 'Energía',         color: '#059669' },
     infrastructure: { label: 'Infraestructura', color: '#d97706' },
-    siderurgia:     { label: 'Siderurgia',      color: '#dc2626' }
+    siderurgia:     { label: 'Siderurgia',      color: '#dc2626' },
+    automotive:     { label: 'Automotriz',      color: '#0d9488' }
   },
 
   statuses: {
@@ -644,6 +645,36 @@ window.RIGI = {
         'Operación y mantenimiento de plantas'
       ],
       companies: 'Compañía MEGA S.A. (YPF, PAE, TotalEnergies)'
+    },
+    {
+      id: 24, sector: 'automotive', status: 'aprobado',
+      name: 'Toyota Zárate · Hilux electrificada',
+      company: 'Toyota Argentina S.A.',
+      province: 'Buenos Aires',
+      amount: 1341,
+      location: 'Zárate, Buenos Aires',
+      approvalDate: '2026-09-30',
+      operationalDate: null,
+      directJobs: 2600,
+      annualExportsUSDm: 1280,
+      companyCountry: 'JP',
+      ticker: '7203', tickerExchange: 'TSE', tickerName: 'Toyota Motor Corporation',
+      description: 'Nueva planta de producción de un vehículo 100% electrificado en Zárate, lindante a la nave industrial que hoy produce las versiones convencionales de la Hilux y la SW4. Toyota fabricará localmente las versiones híbrida suave (MHEV) y eléctrica (BEV) de la Hilux, tecnología hoy no producida en el país. Aprobado por el Comité Evaluador del RIGI el 30 de septiembre de 2026, es la mayor inversión de la historia de la industria automotriz argentina y el primer proyecto automotriz del régimen. Fuerte perfil exportador: US$1.280 millones anuales, cerca del 70% de la producción.',
+      timeline: '2026-09: anuncio de la inversión y aprobación RIGI · 2026-2027: construcción de la nueva planta · fin 2026: presentación oficial de los modelos MHEV y BEV · 2027+: inicio de producción',
+      impact: 'US$1.341 M de inversión, la mayor de la historia de la industria automotriz argentina. 3.600 empleos durante la construcción y 2.600 en la etapa de operación. US$1.280 M/año de exportaciones (cerca del 70% de la producción). Primer proyecto automotriz del RIGI.',
+      opportunities: [
+        'Obra civil y montaje industrial de la nueva planta',
+        'Autopartes para electrificación: baterías, motores eléctricos, inversores',
+        'Utillajes, matricería y troqueles',
+        'Sistemas de carga y equipamiento de electrolineras',
+        'Logística y transporte de vehículos terminados',
+        'Ingeniería, automatización y control de planta',
+        'Insumos siderúrgicos, plásticos y vidrio automotriz',
+        'Formación técnica y capacitación de operarios',
+        'Mantenimiento industrial y servicios auxiliares',
+        'Exportación de autopartes a la red global de Toyota'
+      ],
+      companies: 'Toyota Motor Corporation (Japón)'
     }
   ],
 

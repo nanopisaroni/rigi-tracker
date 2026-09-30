@@ -22,6 +22,7 @@ SECTOR_MAP = {
 
 # Sheet project → our project ID matching (by keywords in sheet name)
 KEYWORD_MAP = [
+    (["Toyota", "Automotriz", "Hilux", "Zárate", "Zarate"], 24),
     (["Fertilizantes", "Urea", "Pampa Energía S.A. Sucursal Dedicada", "Planta de Fertilizantes"], 22),
     (["MEGA", "Mega", "líquidos del gas natural"], 23),
     (["Rincón de Aranda", "Pampa Energía"], 20),
