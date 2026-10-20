@@ -22,9 +22,12 @@ SECTOR_MAP = {
 
 # Sheet project → our project ID matching (by keywords in sheet name)
 KEYWORD_MAP = [
+    (["Tratayén", "Tratayen", "NGL", "LGN", "Poliducto"], 27),
+    (["Los Toldos", "Tecpetrol"], 25),
+    (["Choique", "Invernada"], 26),
     (["Toyota", "Automotriz", "Hilux", "Zárate", "Zarate"], 24),
     (["Fertilizantes", "Urea", "Pampa Energía S.A. Sucursal Dedicada", "Planta de Fertilizantes"], 22),
-    (["MEGA", "Mega", "líquidos del gas natural"], 23),
+    (["MEGA", "Mega"], 23),
     (["Rincón de Aranda", "Pampa Energía"], 20),
     (["El Quemado", "Quemado", "YPF Luz"], 1),
     (["VMOS", "Vaca Muerta Oleoducto Sur", "Oleoducto Sur"], 2),
