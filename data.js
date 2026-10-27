@@ -759,6 +759,36 @@ window.RIGI = {
         'Campamento y servicios para 19.000 trabajadores'
       ],
       companies: 'TGS S.A. (Argentina) con PGS y MGS · socios con capacidad comprometida: YPF, Pluspetrol, Pluspetrol Cuenca Neuquina y Chevron Argentina'
+    },
+    {
+      id: 28, sector: 'mining', status: 'aprobado',
+      name: 'MARA (Agua Rica – Alumbrera)',
+      company: 'Glencore',
+      province: 'Catamarca',
+      amount: 6394,
+      location: 'Catamarca',
+      approvalDate: '2026-10-27',
+      operationalDate: '2031-10',
+      directJobs: 8200,
+      annualExportsUSDm: null,
+      companyCountry: 'CH',
+      ticker: 'GLEN', tickerExchange: 'LSE', tickerName: 'Glencore plc',
+      description: 'Proyecto de cobre, oro, plata y molibdeno que integra Agua Rica con el desarrollo de Minera Alumbrera. Inversión total proyectada de US$6.393,6 M, de los cuales US$3.310 M son activos computables; la empresa comprometió US$771,5 M en activos computables durante los dos primeros años para cubrir el 40% del mínimo exigido en ese período. Contempla el procesamiento de 780 millones de toneladas de mineral y una producción promedio de aproximadamente 160.000 toneladas anuales de concentrado de cobre, con oro, plata y molibdeno asociados. Vida útil estimada en 23 años. La construcción está prevista desde el 1 de noviembre de 2027 y la producción desde octubre de 2031. Plazo hasta el 31 de diciembre de 2028 para alcanzar el monto mínimo de inversión. El 54% del monto destinado a proveedores, bienes y obras de infraestructura corresponderá a empresas locales, sobre un mínimo del 20% que exige el régimen.',
+      timeline: '27 Oct 2026: aprobación RIGI · 1 Nov 2027: inicio de construcción · Oct 2031: inicio de producción · 31 Dic 2028: tope para activos computables · Vida útil: 23 años',
+      impact: 'US$6.394 M de inversión total. 160.000 tn/año de concentrado de cobre. Acumulado: 3,45 Mt de cobre, 2,33 Moz de oro, 41,16 Moz de plata y ~100.000 tn de molibdeno. 8.200 empleos directos e indirectos. 23 años de vida útil. Integra Agua Rica con Alumbrera y consolida a Catamarca como polo del cobre.',
+      opportunities: [
+        'Movimiento de suelos y minería a cielo abierto',
+        'Plantas de procesamiento y molienda',
+        'Concentración por flotación',
+        'Infraestructura de transporte y caminos de montaña',
+        'Provisión de energía y líneas de alta tensión',
+        'Manejo de agua y relaves',
+        'Mantenimiento de equipos mineros',
+        'Logística de concentrados hacia puerto',
+        'Campamentos y servicios en altura',
+        'Provisión local de bienes y servicios (54% del monto)'
+      ],
+      companies: 'Glencore plc (Suiza) — Agua Rica integrado a Minera Alumbrera'
     }
   ],
 
