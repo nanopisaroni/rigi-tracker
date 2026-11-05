@@ -1,0 +1,9 @@
+{
+  "name": "rigi-tracker",
+  "version": "1.0.0",
+  "private": true,
+  "description": "RIGI Tracker y página de la Ronda RIGI de hidrocarburos",
+  "dependencies": {
+    "pg": "^8.11.5"
+  }
+}

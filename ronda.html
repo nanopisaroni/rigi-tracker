@@ -1,0 +1,488 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Ronda RIGI · Hidrocarburos · Tecnópolis, 2 de diciembre</title>
+  <meta name="description" content="Los 10 proyectos de hidrocarburos del RIGI, por US$49.360 millones, ordenados para que un proveedor sepa a quién venderle en la Ronda RIGI del 2 de diciembre en Tecnópolis.">
+  <meta property="og:title" content="Ronda RIGI · Hidrocarburos · 2 de diciembre, Tecnópolis">
+  <meta property="og:description" content="Elegí qué vendés y te decimos a qué proyectos apuntar, en qué etapa está cada uno y qué compra.">
+  <meta property="og:type" content="website">
+  <meta name="theme-color" content="#ffffff">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' fill='%23ffffff' rx='6'/%3E%3Ccircle cx='16' cy='16' r='5' fill='%232563eb'/%3E%3C/svg%3E">
+  <style>
+    /* --- página de la ronda: todo con prefijo r- para no pisar style.css --- */
+    .r-hero { padding: 56px 0 40px; border-bottom: 1px solid var(--border); }
+    .r-hero h1 { font-size: clamp(30px, 4.4vw, 52px); line-height: 1.08; letter-spacing: -0.025em; margin: 14px 0 18px; max-width: 20ch; }
+    .r-hero .r-lede { font-size: 18px; line-height: 1.55; color: var(--text-2); max-width: 62ch; margin: 0 0 26px; }
+    .r-hero .r-lede strong { color: var(--text); font-weight: 600; }
+    .r-when { display: flex; flex-wrap: wrap; gap: 10px 26px; font-size: 14px; color: var(--text-2); margin-bottom: 26px; }
+    .r-when b { color: var(--text); font-weight: 600; }
+    .r-kpis { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 1px; background: var(--border); border: 1px solid var(--border); border-radius: 10px; overflow: hidden; margin: 0 0 28px; }
+    .r-kpis > div { background: #fff; padding: 16px 18px; }
+    .r-kpis .n { font-size: 26px; font-weight: 600; letter-spacing: -0.02em; font-variant-numeric: tabular-nums; }
+    .r-kpis .l { font-size: 12px; color: var(--text-2); margin-top: 3px; }
+    .r-cta { display: inline-flex; align-items: center; gap: 8px; background: var(--blue); color: #fff; text-decoration: none; font-weight: 600; font-size: 15px; padding: 12px 20px; border-radius: 8px; }
+    .r-cta:hover { background: var(--blue-hover); }
+    .r-cta.ghost { background: #fff; color: var(--text); border: 1px solid var(--border-strong); margin-left: 10px; }
+    .r-cta.ghost:hover { border-color: var(--text-3); }
+
+    .r-sec { padding: 44px 0; border-bottom: 1px solid var(--border); }
+    .r-sec h2 { font-size: clamp(22px, 2.6vw, 30px); letter-spacing: -0.02em; margin: 0 0 8px; }
+    .r-sec p.r-sub { color: var(--text-2); font-size: 15px; line-height: 1.55; max-width: 70ch; margin: 0 0 24px; }
+
+    .r-chips { display: flex; flex-wrap: wrap; gap: 8px; margin-bottom: 22px; }
+    .r-chip { font: inherit; font-size: 13.5px; padding: 8px 14px; border-radius: 999px; border: 1px solid var(--border-strong); background: #fff; color: var(--text); cursor: pointer; transition: all .12s; }
+    .r-chip:hover { border-color: var(--text-3); }
+    .r-chip[aria-pressed="true"] { background: var(--blue); border-color: var(--blue); color: #fff; font-weight: 500; }
+    .r-chip small { opacity: .65; margin-left: 5px; font-variant-numeric: tabular-nums; }
+
+    .r-filters { display: flex; flex-wrap: wrap; gap: 12px; align-items: center; padding: 14px 0; border-top: 1px solid var(--border-soft); }
+    .r-filters label { font-size: 12px; color: var(--text-2); text-transform: uppercase; letter-spacing: .06em; }
+    .r-filters select { font: inherit; font-size: 14px; padding: 8px 10px; border: 1px solid var(--border-strong); border-radius: 7px; background: #fff; color: var(--text); }
+    .r-resumen { margin-left: auto; font-size: 13.5px; color: var(--text-2); }
+    .r-resumen b { color: var(--text); font-variant-numeric: tabular-nums; }
+
+    .r-grid { display: grid; grid-template-columns: 1fr; gap: 14px; margin-top: 22px; }
+    @media (min-width: 900px) { .r-grid { grid-template-columns: 1fr 1fr; } }
+
+    .r-card { border: 1px solid var(--border); border-radius: 12px; padding: 20px; background: #fff; display: flex; flex-direction: column; gap: 12px; }
+    .r-card.top { border-color: var(--blue-100); box-shadow: 0 1px 0 var(--blue-50); }
+    .r-card-h { display: flex; align-items: center; gap: 8px; font-size: 12px; color: var(--text-2); }
+    .r-card-h .dot { width: 7px; height: 7px; border-radius: 50%; background: var(--c-oilgas); flex: none; }
+    .r-card-h .st { margin-left: auto; font-weight: 500; }
+    .r-card h3 { font-size: 18px; line-height: 1.3; margin: 0; letter-spacing: -0.01em; }
+    .r-card .co { font-size: 13.5px; color: var(--text-2); }
+    .r-card .loc { font-size: 12.5px; color: var(--text-3); line-height: 1.4; }
+    .r-card .nums { display: flex; gap: 16px; font-size: 13px; border-top: 1px solid var(--border-soft); padding-top: 11px; }
+    .r-card .nums b { font-weight: 600; font-variant-numeric: tabular-nums; }
+    .r-card .nums span { color: var(--text-3); }
+    .r-compra { font-size: 12px; color: var(--text-2); }
+    .r-compra .tt { text-transform: uppercase; letter-spacing: .06em; font-size: 10.5px; color: var(--text-3); display: block; margin-bottom: 6px; }
+    .r-opp { list-style: none; margin: 0; padding: 0; display: flex; flex-direction: column; gap: 4px; }
+    .r-opp li { font-size: 13px; line-height: 1.4; color: var(--text-2); padding-left: 12px; position: relative; }
+    .r-opp li::before { content: ""; position: absolute; left: 0; top: 8px; width: 4px; height: 4px; border-radius: 50%; background: var(--border-strong); }
+    .r-opp li.hit { color: var(--text); font-weight: 500; }
+    .r-opp li.hit::before { background: var(--blue); width: 5px; height: 5px; }
+    .r-card details summary { cursor: pointer; font-size: 12.5px; color: var(--blue); list-style: none; }
+    .r-card details summary::-webkit-details-marker { display: none; }
+    .r-ventana { font-size: 11.5px; font-weight: 500; padding: 4px 9px; border-radius: 999px; align-self: flex-start; }
+    .v-0 { background: var(--green-100); color: #15803d; }
+    .v-1 { background: var(--blue-100); color: var(--blue-hover); }
+    .v-2 { background: var(--yellow-100); color: #a16207; }
+    .v-3 { background: var(--surface-2); color: var(--text-3); }
+
+    .r-vacio { border: 1px dashed var(--border-strong); border-radius: 12px; padding: 28px; text-align: center; color: var(--text-2); font-size: 14.5px; margin-top: 20px; }
+
+    .r-form { display: grid; grid-template-columns: 1fr; gap: 14px; max-width: 720px; margin-top: 8px; }
+    @media (min-width: 720px) { .r-form { grid-template-columns: 1fr 1fr; } .r-form .full { grid-column: 1 / -1; } }
+    .r-field { display: flex; flex-direction: column; gap: 6px; }
+    .r-field label { font-size: 12.5px; font-weight: 500; color: var(--text-2); }
+    .r-field label .opt { font-weight: 400; color: var(--text-3); }
+    .r-field input, .r-field select, .r-field textarea { font: inherit; font-size: 14.5px; padding: 10px 12px; border: 1px solid var(--border-strong); border-radius: 8px; background: #fff; color: var(--text); }
+    .r-field input:focus, .r-field select:focus, .r-field textarea:focus { outline: none; border-color: var(--blue); box-shadow: 0 0 0 3px var(--blue-50); }
+    .r-field textarea { resize: vertical; min-height: 74px; }
+    .r-hp { position: absolute; left: -9999px; opacity: 0; }
+    .r-btn { font: inherit; font-size: 15px; font-weight: 600; background: var(--blue); color: #fff; border: 0; border-radius: 8px; padding: 13px 22px; cursor: pointer; align-self: flex-start; }
+    .r-btn:hover { background: var(--blue-hover); }
+    .r-btn:disabled { opacity: .55; cursor: default; }
+    .r-msg { font-size: 14px; line-height: 1.5; padding: 12px 14px; border-radius: 8px; display: none; }
+    .r-msg.ok { display: block; background: var(--green-100); color: #166534; }
+    .r-msg.err { display: block; background: var(--red-100); color: #991b1b; }
+
+    .r-nota { background: var(--surface); border: 1px solid var(--border); border-radius: 12px; padding: 20px 22px; font-size: 13px; line-height: 1.6; color: var(--text-2); }
+    .r-nota h3 { font-size: 13px; text-transform: uppercase; letter-spacing: .07em; color: var(--text); margin: 0 0 10px; }
+    .r-nota p { margin: 0 0 8px; }
+    .r-nota p:last-child { margin: 0; }
+
+    .r-foot { padding: 28px 0 48px; font-size: 12.5px; color: var(--text-3); display: flex; flex-wrap: wrap; gap: 8px 20px; justify-content: space-between; }
+    .r-foot a { color: var(--text-2); }
+
+    @media (max-width: 720px) {
+      .r-kpis { grid-template-columns: 1fr 1fr; }
+      .r-resumen { margin-left: 0; width: 100%; }
+      .r-cta.ghost { margin-left: 0; margin-top: 10px; }
+      .r-when { flex-direction: column; gap: 6px; }
+    }
+  </style>
+</head>
+<body>
+
+<header class="topbar">
+  <div class="container topbar-inner">
+    <a class="brand" href="/">
+      <span class="brand-dot" aria-hidden="true"></span>
+      <span class="brand-name">RIGI Tracker</span>
+    </a>
+    <nav class="topnav" id="topnav">
+      <a href="#vender">A quién le vendo</a>
+      <a href="#registro">Registrar mi empresa</a>
+      <a href="#como-leer">Cómo leer esto</a>
+      <a href="/">El tracker completo</a>
+    </nav>
+    <div class="regime-nav">
+      <a href="/" class="regime-pill">Tracker</a>
+    </div>
+    <button class="topnav-toggle" id="topnavToggle" aria-label="Abrir menú" aria-expanded="false">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+</header>
+
+<main>
+
+  <section class="r-hero">
+    <div class="container">
+      <div class="eyebrow">Ronda RIGI · Segunda edición · Hidrocarburos</div>
+      <h1>Diez proyectos. <span class="hl">Tres están en ventana de compra.</span></h1>
+      <p class="r-lede">
+        El <strong>miércoles 2 de diciembre</strong> se hace en <strong>Tecnópolis</strong> la segunda Ronda RIGI,
+        la primera dedicada a hidrocarburos. La anterior, en Santa Fe, conectó más de 2.500 proveedores con
+        empresas mineras. Esta página hace lo que un listado de expositores no hace: ordena
+        <strong>quién compra, qué compra y en qué etapa está</strong>, para que no viajes a ciegas.
+      </p>
+      <div class="r-when">
+        <div><b>Cuándo</b> miércoles 2 de diciembre</div>
+        <div><b>Dónde</b> Tecnópolis, Buenos Aires</div>
+        <div><b>Sector</b> hidrocarburos</div>
+      </div>
+      <ul class="r-kpis" role="list">
+        <li><div class="n" id="kProy">10</div><div class="l">proyectos RIGI de hidrocarburos</div></li>
+        <li><div class="n" id="kMonto">US$49.358 M</div><div class="l">de inversión anunciada</div></li>
+        <li><div class="n" id="kCompran">3</div><div class="l">en ventana de compra</div></li>
+        <li><div class="n" id="kEmp">46.715</div><div class="l">empleos declarados</div></li>
+      </ul>
+      <a class="r-cta" href="#vender">¿A quién le vendo?</a>
+      <a class="r-cta ghost" href="#registro">Registrar mi empresa</a>
+    </div>
+  </section>
+
+  <section class="r-sec" id="vender">
+    <div class="container">
+      <h2>Elegí qué vendés</h2>
+      <p class="r-sub">
+        Cada proyecto del RIGI declara qué necesita comprar. Filtrá por rubro y te quedan solo los proyectos
+        donde tenés lugar, ordenados por ventana de compra y por tamaño. Los rubros salen de las oportunidades
+        que el propio tracker publica para cada proyecto.
+      </p>
+      <div class="r-chips" id="chips" role="group" aria-label="Rubros"></div>
+
+      <div class="r-filters">
+        <label for="fProv">Provincia</label>
+        <select id="fProv"><option value="">Todas</option></select>
+        <label for="fVent">Ventana</label>
+        <select id="fVent">
+          <option value="">Todas</option>
+          <option value="0">Comprando ahora</option>
+          <option value="1">Próximos 12 meses</option>
+          <option value="2">6 a 18 meses</option>
+        </select>
+        <div class="r-resumen" id="resumen"></div>
+      </div>
+
+      <div class="r-grid" id="grid"></div>
+      <div class="r-vacio" id="vacio" hidden>Ningún proyecto de hidrocarburos compra ese rubro en esa combinación. Probá con otro rubro o quitá los filtros.</div>
+    </div>
+  </section>
+
+  <section class="r-sec" id="registro">
+    <div class="container">
+      <h2>Registrá tu empresa</h2>
+      <p class="r-sub">
+        Dejanos los datos y te avisamos cuando aparezca una compra que encaje con lo que hacés.
+        Con el CUIT podemos cruzar tu empresa contra los proyectos y avisarte por rubro, no por mailing general.
+      </p>
+      <form class="r-form" id="form" novalidate>
+        <div class="r-field">
+          <label for="empresa">Empresa</label>
+          <input id="empresa" name="empresa" type="text" autocomplete="organization" required maxlength="160" placeholder="Razón social">
+        </div>
+        <div class="r-field">
+          <label for="cuit">CUIT</label>
+          <input id="cuit" name="cuit" type="text" inputmode="numeric" required maxlength="16" placeholder="30-12345678-9">
+        </div>
+        <div class="r-field">
+          <label for="rubro">Qué vendés</label>
+          <select id="rubro" name="rubro" required><option value="">Elegí un rubro</option></select>
+        </div>
+        <div class="r-field">
+          <label for="provincia">Provincia</label>
+          <select id="provincia" name="provincia" required><option value="">Elegí una provincia</option></select>
+        </div>
+        <div class="r-field">
+          <label for="email">Email</label>
+          <input id="email" name="email" type="email" autocomplete="email" required maxlength="160" placeholder="nombre@empresa.com.ar">
+        </div>
+        <div class="r-field">
+          <label for="telefono">Teléfono <span class="opt">(opcional)</span></label>
+          <input id="telefono" name="telefono" type="tel" autocomplete="tel" maxlength="40" placeholder="+54 9 351 ...">
+        </div>
+        <div class="r-field full">
+          <label for="proyecto">Proyecto que te interesa <span class="opt">(opcional)</span></label>
+          <select id="proyecto" name="proyecto"><option value="">Todos</option></select>
+        </div>
+        <div class="r-field full">
+          <label for="mensaje">Algo más <span class="opt">(opcional)</span></label>
+          <textarea id="mensaje" name="mensaje" maxlength="600" placeholder="Certificaciones, capacidad de planta, experiencia en Vaca Muerta, lo que ayude a ubicarte."></textarea>
+        </div>
+        <input class="r-hp" type="text" name="_hp" id="_hp" tabindex="-1" autocomplete="off" aria-hidden="true">
+        <div class="full">
+          <button class="r-btn" type="submit" id="btn">Registrarme</button>
+        </div>
+        <div class="r-msg full" id="msg" role="status"></div>
+      </form>
+    </div>
+  </section>
+
+  <section class="r-sec" id="como-leer">
+    <div class="container">
+      <div class="r-nota">
+        <h3>Cómo leer esta página</h3>
+        <p><b>Los datos.</b> Los montos, empresas, provincias, estados, empleos y oportunidades salen del RIGI Tracker, que se alimenta de la planilla oficial del Ministerio de Economía. No hay cifras estimadas acá.</p>
+        <p><b>La ventana de compra es una lectura, no un dato.</b> Sale de la etapa que el proyecto declara: si está en construcción comprende ahora, si está aprobado comprende cuando cierre el financiamiento. El plan de compras real de cada empresa no es público y puede ser distinto.</p>
+        <p><b>Los rubros son una clasificación nuestra</b> sobre las oportunidades que el tracker ya publica. Si vendés algo que no entra en ninguno, registrate igual y lo ubicamos a mano.</p>
+        <p><b>Los montos están en millones de dólares.</b> US$15.156 M son quince mil ciento cincuenta y seis millones, no quince mil. En esta página el punto separa miles y la M siempre significa millones.</p>
+        <p><b>Esta página no es oficial.</b> No está organizada ni avalada por el Ministerio de Economía ni por la organización de la Ronda. Es una herramienta de lectura sobre datos públicos.</p>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<footer class="container r-foot">
+  <div>RIGI Tracker · datos de la planilla oficial del Ministerio de Economía · actualizado octubre 2026</div>
+  <div>Hecho por <a href="https://x.com/nanopisaroni" target="_blank" rel="noopener">@nanopisaroni</a> · <a href="/">ver el tracker completo</a></div>
+</footer>
+
+<script src="data.js"></script>
+<script>
+(function () {
+  const R = window.RIGI || { projects: [] };
+  const PROYECTOS = R.projects.filter(p => p.sector === 'oilgas');
+
+  // ---------- utilidades ----------
+  const norm = s => (s || '').toString().toLowerCase()
+    .normalize('NFD').replace(/[\u0300-\u036f]/g, '');
+  const fmtM = n => 'US$' + Math.round(n || 0).toLocaleString('es-AR') + ' M';
+  const fmtN = n => (n || 0).toLocaleString('es-AR');
+  const esc = s => (s || '').toString().replace(/[&<>"]/g, c => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;' }[c]));
+
+  // ---------- rubros: lo que un proveedor dice que vende ----------
+  const RUBROS = [
+    { id: 'perforacion',    label: 'Perforación y fractura',         rx: /perforaci|fractura|pressure pumping|completaci|\bpozos?\b/ },
+    { id: 'ductos',         label: 'Cañerías, válvulas y ductos',     rx: /caneri|canos|valvula|ducto|oleoducto|gasoducto|revestimiento|poliducto|tuber/ },
+    { id: 'ingenieria',     label: 'Ingeniería y obra civil',         rx: /ingenier|obra civil|construcci|montaje|supervisi|facilidades de superficie/ },
+    { id: 'soldadura',      label: 'Soldadura y ensayos',             rx: /soldadura|ensayos no destructivos|certificaci|control de calidad|\bend\b/ },
+    { id: 'gas',            label: 'Compresión y tratamiento de gas', rx: /compresi|tratamiento de gas|separaci|fraccionamiento|criogenic|frio|\bngls?\b|procesamiento/ },
+    { id: 'logistica',      label: 'Campamentos, logística y puerto', rx: /campamento|logistica|transporte|portuari|ferroviari|terminal maritima/ },
+    { id: 'automatizacion', label: 'Automatización y medición',       rx: /automatizaci|instrumentaci|medicion|monitoreo|scada|dcs|sensor|control de procesos/ },
+    { id: 'ambiente',       label: 'Ambiente, agua y residuos',       rx: /ambiental|remediaci|residuos|efluentes|\bagua\b|reinyeccion|impacto ambiental|tratamiento de agua/ },
+    { id: 'tanques',        label: 'Tanques y almacenamiento',        rx: /tanque|almacenamiento/ },
+    { id: 'operacion',      label: 'Mantenimiento y operación',       rx: /mantenimiento|operacion/ }
+  ];
+
+  // ---------- ventana de compra ----------
+  const VENTANA = {
+    construccion: { rank: 0, label: 'Comprando ahora', clase: 'v-0' },
+    ampliacion:   { rank: 0, label: 'Comprando ahora', clase: 'v-0' },
+    desarrollo:   { rank: 1, label: 'Compras en los próximos 12 meses', clase: 'v-1' },
+    aprobado:     { rank: 2, label: 'Compra cuando cierre el financiamiento, 6 a 18 meses', clase: 'v-2' },
+    operativo:    { rank: 2, label: 'Compras de operación y mantenimiento', clase: 'v-2' },
+    exploracion:  { rank: 3, label: 'Sin compras de escala todavía', clase: 'v-3' },
+    anunciado:    { rank: 3, label: 'Sin compras de escala todavía', clase: 'v-3' }
+  };
+
+  PROYECTOS.forEach(p => {
+    p._vent = VENTANA[p.status] || VENTANA.aprobado;
+    p._opps = (p.opportunities || []).map(t => ({ texto: t, n: norm(t) }));
+  });
+
+  const porRubro = id => {
+    const r = RUBROS.find(x => x.id === id);
+    if (!r) return PROYECTOS;
+    return PROYECTOS.filter(p => p._opps.some(o => r.rx.test(o.n)));
+  };
+
+  // ---------- KPIs ----------
+  const totalM = PROYECTOS.reduce((a, p) => a + (p.amount || 0), 0);
+  const empleos = PROYECTOS.reduce((a, p) => a + (p.directJobs || 0), 0);
+  const enVentana = PROYECTOS.filter(p => p._vent.rank <= 1).length;
+  document.getElementById('kProy').textContent = PROYECTOS.length;
+  document.getElementById('kMonto').textContent = fmtM(totalM);
+  document.getElementById('kCompran').textContent = enVentana;
+  document.getElementById('kEmp').textContent = fmtN(empleos);
+
+  // ---------- estado ----------
+  let rubroSel = '';
+  let provSel = '';
+  let ventSel = '';
+
+  // ---------- chips ----------
+  const chipsEl = document.getElementById('chips');
+  function pintarChips() {
+    chipsEl.innerHTML = '';
+    const todos = document.createElement('button');
+    todos.className = 'r-chip';
+    todos.type = 'button';
+    todos.setAttribute('aria-pressed', String(rubroSel === ''));
+    todos.innerHTML = 'Todos los rubros <small>' + PROYECTOS.length + '</small>';
+    todos.onclick = () => { rubroSel = ''; pintar(); };
+    chipsEl.appendChild(todos);
+
+    RUBROS.forEach(r => {
+      const n = porRubro(r.id).length;
+      if (!n) return;
+      const b = document.createElement('button');
+      b.className = 'r-chip';
+      b.type = 'button';
+      b.setAttribute('aria-pressed', String(rubroSel === r.id));
+      b.innerHTML = esc(r.label) + ' <small>' + n + '</small>';
+      b.onclick = () => { rubroSel = (rubroSel === r.id ? '' : r.id); pintar(); };
+      chipsEl.appendChild(b);
+    });
+  }
+
+  // ---------- filtros de provincia ----------
+  const provincias = [...new Set(PROYECTOS.map(p => p.province).filter(Boolean))].sort((a, b) => a.localeCompare(b, 'es'));
+  const fProv = document.getElementById('fProv');
+  provincias.forEach(pv => {
+    const o = document.createElement('option');
+    o.value = pv; o.textContent = pv;
+    fProv.appendChild(o);
+  });
+
+  // ---------- tarjetas ----------
+  const grid = document.getElementById('grid');
+  const vacio = document.getElementById('vacio');
+  const resumen = document.getElementById('resumen');
+
+  function seleccion() {
+    const r = RUBROS.find(x => x.id === rubroSel);
+    let lista = PROYECTOS.slice();
+    if (r) lista = lista.filter(p => p._opps.some(o => r.rx.test(o.n)));
+    if (provSel) lista = lista.filter(p => p.province === provSel);
+    if (ventSel !== '') lista = lista.filter(p => p._vent.rank === Number(ventSel));
+    lista.sort((a, b) => (a._vent.rank - b._vent.rank) || ((b.amount || 0) - (a.amount || 0)));
+    return { lista, r };
+  }
+
+  function pintar() {
+    pintarChips();
+    const { lista, r } = seleccion();
+
+    const suma = lista.reduce((a, p) => a + (p.amount || 0), 0);
+    resumen.innerHTML = '<b>' + lista.length + '</b> proyecto' + (lista.length === 1 ? '' : 's') +
+      ' · <b>' + fmtM(suma) + '</b>';
+
+    grid.innerHTML = '';
+    vacio.hidden = lista.length > 0;
+
+    lista.forEach(p => {
+      const opps = p._opps.map(o => ({ texto: o.texto, hit: r ? r.rx.test(o.n) : false }));
+      const hits = opps.filter(o => o.hit);
+      const resto = opps.filter(o => !o.hit);
+      const visibles = r ? hits : opps.slice(0, 4);
+      const ocultas = r ? [] : opps.slice(4);
+
+      const card = document.createElement('article');
+      card.className = 'r-card' + (p._vent.rank === 0 ? ' top' : '');
+      const estado = { construccion: 'En construcción', desarrollo: 'En desarrollo', aprobado: 'Aprobado', ampliacion: 'En ampliación', operativo: 'Operativo', exploracion: 'En exploración' }[p.status] || p.status;
+
+      card.innerHTML =
+        '<div class="r-card-h"><span class="dot"></span>Oil &amp; Gas · ' + esc(p.province) +
+          '<span class="st">' + esc(estado) + '</span></div>' +
+        '<h3>' + esc(p.name) + '</h3>' +
+        '<div class="co">' + esc(p.company) + '</div>' +
+        '<div class="loc">' + esc(p.location || p.province) + '</div>' +
+        '<div class="nums"><div><b>' + fmtM(p.amount) + '</b> <span>inversión</span></div>' +
+          (p.directJobs ? '<div><b>' + fmtN(p.directJobs) + '</b> <span>empleos</span></div>' : '') + '</div>' +
+        '<div class="r-compra"><span class="tt">' + (r ? 'Dónde entrás' : 'Qué compra') + '</span>' +
+          '<ul class="r-opp">' + visibles.map(o => '<li class="' + (o.hit ? 'hit' : '') + '">' + esc(o.texto) + '</li>').join('') + '</ul>' +
+          (ocultas.length ? '<details><summary>Ver las ' + opps.length + ' oportunidades</summary><ul class="r-opp" style="margin-top:8px">' +
+            ocultas.map(o => '<li>' + esc(o.texto) + '</li>').join('') + '</ul></details>' :
+            (r && resto.length ? '<details><summary>Ver también las otras ' + resto.length + ' que declara</summary><ul class="r-opp" style="margin-top:8px">' +
+            resto.map(o => '<li>' + esc(o.texto) + '</li>').join('') + '</ul></details>' : '')) +
+        '</div>' +
+        '<span class="r-ventana ' + p._vent.clase + '">' + p._vent.label + '</span>';
+
+      grid.appendChild(card);
+    });
+  }
+
+  fProv.onchange = e => { provSel = e.target.value; pintar(); };
+  document.getElementById('fVent').onchange = e => { ventSel = e.target.value; pintar(); };
+
+  // ---------- formulario ----------
+  const selRubro = document.getElementById('rubro');
+  RUBROS.forEach(r => {
+    const o = document.createElement('option');
+    o.value = r.label; o.textContent = r.label;
+    selRubro.appendChild(o);
+  });
+
+  const PROVINCIAS_AR = ['Buenos Aires','CABA','Catamarca','Chaco','Chubut','Córdoba','Corrientes','Entre Ríos','Formosa','Jujuy','La Pampa','La Rioja','Mendoza','Misiones','Neuquén','Río Negro','Salta','San Juan','San Luis','Santa Cruz','Santa Fe','Santiago del Estero','Tierra del Fuego','Tucumán'];
+  const selProv = document.getElementById('provincia');
+  PROVINCIAS_AR.forEach(pv => {
+    const o = document.createElement('option');
+    o.value = pv; o.textContent = pv;
+    selProv.appendChild(o);
+  });
+
+  const selProy = document.getElementById('proyecto');
+  PROYECTOS.slice().sort((a, b) => (b.amount || 0) - (a.amount || 0)).forEach(p => {
+    const o = document.createElement('option');
+    o.value = p.name; o.textContent = p.name.length > 60 ? p.name.slice(0, 57) + '...' : p.name;
+    selProy.appendChild(o);
+  });
+
+  const form = document.getElementById('form');
+  const msg = document.getElementById('msg');
+  const btn = document.getElementById('btn');
+
+  form.addEventListener('submit', async e => {
+    e.preventDefault();
+    msg.className = 'r-msg';
+    btn.disabled = true;
+    btn.textContent = 'Enviando...';
+    const datos = Object.fromEntries(new FormData(form).entries());
+    try {
+      const r = await fetch('/api/proveedores', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(datos)
+      });
+      const j = await r.json();
+      if (j.ok) {
+        msg.className = 'r-msg ok';
+        msg.textContent = 'Listo. Guardamos tus datos y te escribimos cuando haya una compra que encaje con tu rubro.';
+        form.reset();
+      } else {
+        msg.className = 'r-msg err';
+        msg.textContent = j.error || 'No pudimos guardar el registro.';
+      }
+    } catch (err) {
+      msg.className = 'r-msg err';
+      msg.textContent = 'No pudimos conectar. Revisá la conexión y probá de nuevo.';
+    } finally {
+      btn.disabled = false;
+      btn.textContent = 'Registrarme';
+    }
+  });
+
+  // menú en mobile
+  const tg = document.getElementById('topnavToggle');
+  if (tg) tg.addEventListener('click', () => {
+    const nav = document.getElementById('topnav');
+    const abierto = nav.classList.toggle('open');
+    tg.setAttribute('aria-expanded', String(abierto));
+  });
+
+  pintar();
+})();
+</script>
+</body>
+</html>
