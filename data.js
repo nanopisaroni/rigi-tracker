@@ -789,6 +789,34 @@ window.RIGI = {
         'Provisión local de bienes y servicios (54% del monto)'
       ],
       companies: 'Glencore plc (Suiza) — Agua Rica integrado a Minera Alumbrera'
+    },
+    {
+      id: 29, sector: 'oilgas', status: 'aprobado',
+      name: 'Argentina LNG',
+      company: 'YPF + ENI + XRG',
+      province: 'Río Negro',
+      amount: 50750,
+      location: 'Golfo San Matías, Río Negro · gasoducto y poliducto de 524 km desde Neuquén',
+      approvalDate: '2026-11-26',
+      operationalDate: '2027–2030 primera etapa · 2050 capacidad final',
+      directJobs: 28000,
+      annualExportsUSDm: 9000,
+      companyCountry: 'AR',
+      ticker: 'YPF', tickerExchange: 'NYSE', tickerName: 'YPF S.A.',
+      description: 'Aprobado por el RIGI el 26/11/2026: el mayor proyecto de la historia argentina. YPF, ENI y XRG (ADNOC) invertirán US$50.750 M en dos etapas: US$25.000 M entre 2027 y 2030 y el resto hasta 2050. Dos unidades flotantes de licuefacción en el Golfo San Matías para exportar 12 millones de toneladas anuales de GNL y líquidos por más de US$9.000 M al año, con gas de Vaca Muerta, un gasoducto y un poliducto de 524 km cada uno y complejos industriales en Neuquén y Río Negro. Socios: YPF 36%, ENI 32%, XRG 32%; operado por UPCO ARLNG I S.A.U.',
+      timeline: '13 Ago 2026: presentación al RIGI · 26 Nov 2026: aprobación · 2027–2030: primera etapa de US$25.000 M · 2030: primer GNL · 2050: capacidad final de US$50.750 M',
+      impact: 'Exportaciones por más de US$9.000 M anuales. 20.000 empleos en construcción con picos de 40.000 y 8.000 en operación. US$15.000 M en bienes y servicios nacionales. Argentina pasa a exportar GNL a escala.',
+      opportunities: [
+        'Ingeniería criogénica y plantas de licuefacción',
+        'Buques metaneros y logística portuaria',
+        'Compresión y tratamiento de gas',
+        'Cañerías de 48 pulgadas y revestimiento',
+        'Servicios de inspección y certificación',
+        'Construcción naval y mantenimiento',
+        'Provisión de energía para las operaciones',
+        'Hotelería y servicios para los picos de 40.000 trabajadores'
+      ],
+      companies: 'YPF (Argentina) 36%, ENI (Italia) 32%, XRG/ADNOC (Emiratos Árabes Unidos) 32%'
     }
   ],
 
@@ -820,35 +848,6 @@ window.RIGI = {
         'Transporte de crudo y logística portuaria'
       ],
       companies: 'YPF S.A. (Argentina)'
-    },
-    {
-      id: 'B', sector: 'oilgas', status: 'anunciado',
-      name: 'Argentina GNL',
-      company: 'YPF + ENI + XRG',
-      province: 'Río Negro',
-      amount: 51000,
-      location: 'Golfo San Matías, Río Negro · gasoducto desde Meseta Buena Esperanza, Neuquén',
-      announcementDate: '2026-08-13',
-      decisionDate: '2S 2026 (FID)',
-      directJobs: 40000,
-      annualExportsUSDm: 10000,
-      companyCountry: 'AR',
-      ticker: 'YPF', tickerExchange: 'NYSE', tickerName: 'YPF S.A.',
-      description: 'El mayor proyecto presentado al RIGI hasta la fecha: megaproyecto de GNL de YPF con ENI (Italia) y XRG (ADNOC, EAU), presentado formalmente el 13/08/2026. Dos unidades flotantes de licuefacción (FLNG) frente al Golfo San Matías con capacidad de 12 millones de tn/año (meta de escalar a 18). Incluye un gasoducto de 527 km y 48 pulgadas entre Meseta Buena Esperanza (Neuquén) y Sierra Grande (Río Negro) — el mayor del país — con capacidad de ~100 MMm3/d, más un poliducto para líquidos asociados. Inversión total de US$51.000 M: 70% con crédito internacional y 30% aportes de socios. Primera etapa de US$15.500 M con JP Morgan (47 bancos ofrecieron, 2,4x lo requerido). Bloques 36% YPF, 32% ENI, 32% XRG tras swap con Pluspetrol; administrados por UPCO ARLNG I S.A.U.',
-      timeline: '2025–2026: acuerdo y estructuración · 13 Ago 2026: presentación formal al RIGI · 2S 2026: FID · 2029–2031: puesta en operación de las 2 unidades FLNG · hasta 2031: US$29.000 M (US$24.000 M infraestructura + US$5.000 M upstream)',
-      impact: 'Exportaciones por hasta US$10.000 M anuales durante dos décadas. 20.000 empleos anuales en construcción (picos de 40.000) y 8.000 en operación. US$15.000 M en bienes y servicios a proveedores nacionales. Argentina como exportador de GNL.',
-      opportunities: [
-        'Ingeniería criogénica y plantas de licuefacción',
-        'Buques metaneros y logística portuaria',
-        'Compresión y tratamiento de gas',
-        'Cañerías de interconexión',
-        'Provisión de caños de 48 pulgadas y revestimiento (Tenaris estudia participar)',
-        'Servicios de inspección y certificación',
-        'Construcción naval y mantenimiento',
-        'Provisión de energía para las operaciones',
-        'Hotelería y servicios para 40.000 trabajadores'
-      ],
-      companies: 'YPF (Argentina) 36%, ENI (Italia) 32%, XRG/ADNOC (Emiratos Árabes Unidos) 32%'
     }
   ]
 };
