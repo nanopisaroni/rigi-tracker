@@ -655,7 +655,7 @@ window.RIGI = {
       location: 'Zárate, Buenos Aires',
       approvalDate: '2026-09-30',
       operationalDate: null,
-      directJobs: 2600,
+      directJobs: 6225,
       annualExportsUSDm: 1280,
       companyCountry: 'JP',
       ticker: '7203', tickerExchange: 'TSE', tickerName: 'Toyota Motor Corporation',
